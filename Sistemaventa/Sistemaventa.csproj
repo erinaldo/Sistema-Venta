@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props" Condition="Exists('..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{527DE1B4-CDA4-45CF-ADA1-7FCF828C3A65}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sistemaventa</RootNamespace>
+    <AssemblyName>Sistemaventa</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LibGit2Sharp, Version=0.26.0.0, Culture=neutral, PublicKeyToken=7cbde695407f0333, processorArchitecture=MSIL">
+      <HintPath>..\packages\LibGit2Sharp.0.26.2\lib\net46\LibGit2Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailKit.3.4.0\lib\netstandard2.0\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=3.4.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.3.4.0\lib\netstandard2.0\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.6.0.0\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.6.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutProyect\FormAcercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutProyect\FormAcercade.Designer.cs">
+      <DependentUpon>FormAcercade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnimationsForm\FormAnimation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnimationsForm\FormAnimation.Designer.cs">
+      <DependentUpon>FormAnimation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\CodeRepeatClass.cs" />
+    <Compile Include="Class\EntidadClass.cs" />
+    <Compile Include="EstadoSistema\FormEstadoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadoSistema\FormEstadoProducto.Designer.cs">
+      <DependentUpon>FormEstadoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCategoria.Designer.cs">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCliente.Designer.cs">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCompra.Designer.cs">
+      <DependentUpon>FormCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEditarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditarEmpleado.Designer.cs">
+      <DependentUpon>FormEditarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEmpleado.Designer.cs">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMarca.Designer.cs">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProducto.Designer.cs">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProveedor.Designer.cs">
+      <DependentUpon>FormProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRol.Designer.cs">
+      <DependentUpon>FormRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTienda.Designer.cs">
+      <DependentUpon>FormTienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVenta.Designer.cs">
+      <DependentUpon>FormVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewUser\FormNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUser\FormNuevoUsuario.Designer.cs">
+      <DependentUpon>FormNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\CambioDolar.cs" />
+    <Compile Include="ORMDataModel1Code\CambioDolar.Designer.cs">
+      <DependentUpon>CambioDolar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Categoria.cs" />
+    <Compile Include="ORMDataModel1Code\Categoria.Designer.cs">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Cliente.cs" />
+    <Compile Include="ORMDataModel1Code\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Compra.cs" />
+    <Compile Include="ORMDataModel1Code\Compra.Designer.cs">
+      <DependentUpon>Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\ConnectionHelper.cs" />
+    <Compile Include="ORMDataModel1Code\DetalleCompra.cs" />
+    <Compile Include="ORMDataModel1Code\DetalleCompra.Designer.cs">
+      <DependentUpon>DetalleCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\DetalleVenta.cs" />
+    <Compile Include="ORMDataModel1Code\DetalleVenta.Designer.cs">
+      <DependentUpon>DetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Empleado.cs" />
+    <Compile Include="ORMDataModel1Code\Empleado.Designer.cs">
+      <DependentUpon>Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\EstadoProducto.cs" />
+    <Compile Include="ORMDataModel1Code\EstadoProducto.Designer.cs">
+      <DependentUpon>EstadoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\EstadoVenta.cs" />
+    <Compile Include="ORMDataModel1Code\EstadoVenta.Designer.cs">
+      <DependentUpon>EstadoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Marca.cs" />
+    <Compile Include="ORMDataModel1Code\Marca.Designer.cs">
+      <DependentUpon>Marca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Negocio.cs" />
+    <Compile Include="ORMDataModel1Code\Negocio.Designer.cs">
+      <DependentUpon>Negocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Producto.cs" />
+    <Compile Include="ORMDataModel1Code\Producto.Designer.cs">
+      <DependentUpon>Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Proveedor.cs" />
+    <Compile Include="ORMDataModel1Code\Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Rol.cs" />
+    <Compile Include="ORMDataModel1Code\Rol.Designer.cs">
+      <DependentUpon>Rol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\StoredProcHelper.cs" />
+    <Compile Include="ORMDataModel1Code\Tema.cs" />
+    <Compile Include="ORMDataModel1Code\Tema.Designer.cs">
+      <DependentUpon>Tema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Venta.cs" />
+    <Compile Include="ORMDataModel1Code\Venta.Designer.cs">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\ClassValidations.cs" />
+    <Compile Include="ViewList\FormDeatellesVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewList\FormDeatellesVenta.Designer.cs">
+      <DependentUpon>FormDeatellesVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewList\FormDetallesCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewList\FormDetallesCompra.Designer.cs">
+      <DependentUpon>FormDetallesCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewList\FormListViewCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewList\FormListViewCompra.Designer.cs">
+      <DependentUpon>FormListViewCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewList\FormListViewVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewList\FormListViewVenta.Designer.cs">
+      <DependentUpon>FormListViewVenta.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutProyect\FormAcercade.resx">
+      <DependentUpon>FormAcercade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnimationsForm\FormAnimation.resx">
+      <DependentUpon>FormAnimation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadoSistema\FormEstadoProducto.resx">
+      <DependentUpon>FormEstadoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCategoria.resx">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCliente.resx">
+      <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCompra.resx">
+      <DependentUpon>FormCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditarEmpleado.resx">
+      <DependentUpon>FormEditarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMarca.resx">
+      <DependentUpon>FormMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProducto.resx">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormProveedor.resx">
+      <DependentUpon>FormProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRol.resx">
+      <DependentUpon>FormRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTienda.resx">
+      <DependentUpon>FormTienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVenta.resx">
+      <DependentUpon>FormVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUser\FormNuevoUsuario.resx">
+      <DependentUpon>FormNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ViewList\FormDeatellesVenta.resx">
+      <DependentUpon>FormDeatellesVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewList\FormDetallesCompra.resx">
+      <DependentUpon>FormDetallesCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewList\FormListViewCompra.resx">
+      <DependentUpon>FormListViewCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewList\FormListViewVenta.resx">
+      <DependentUpon>FormListViewVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ORMDataModel1.xpo" />
+    <None Include="ORMDataModel1.xpo.diagram">
+      <DependentUpon>ORMDataModel1.xpo</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resource\Caja Registradora\intercambiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Imagen-Roles\roles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Subir\subir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resource\Caja Registradora\caja-registradora-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ElemtE-mail\HTMLPage1.html" />
+    <None Include="Resource\LogoEmpresa\Logotipo marca trazo circular azul turquesa.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\GitInfo.2.2.0\build\GitInfo.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GitInfo.2.2.0\build\GitInfo.targets'))" />
+    <Error Condition="!Exists('..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LibGit2Sharp.NativeBinaries.2.0.306\build\net46\LibGit2Sharp.NativeBinaries.props'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\GitInfo.2.2.0\build\GitInfo.targets" Condition="Exists('..\packages\GitInfo.2.2.0\build\GitInfo.targets')" />
+</Project>

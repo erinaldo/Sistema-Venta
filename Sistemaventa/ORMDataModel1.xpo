@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="918de4c6-2df3-4b58-b3cd-05db7a949f73" dbName="Sistema_Venta" connectionInfo="77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxEZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3MgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgcHJvdmlkZXJLZXk9Ik1TU3FsU2VydmVyIj4NCiAgPHBhcmFtZXRlcj4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0ic2VydmVyIiB2YWx1ZT0ibG9jYWxob3N0IiAvPg0KICAgIDxDb25uZWN0aW9uUGFnZVNldHRpbmdzSXRlbSBuYW1lPSJkYXRhYmFzZSIgdmFsdWU9IlNpc3RlbWFfVmVudGEiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InVzZUludGVncmF0ZWRTZWN1cml0eSIgdmFsdWU9IlRydWUiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InVzZXJpZCIgdmFsdWU9IiIgLz4NCiAgICA8Q29ubmVjdGlvblBhZ2VTZXR0aW5nc0l0ZW0gbmFtZT0icGFzc3dvcmQiIHZhbHVlPSIiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9InJlYWQgb25seSIgdmFsdWU9IjEiIC8+DQogICAgPENvbm5lY3Rpb25QYWdlU2V0dGluZ3NJdGVtIG5hbWU9ImdlbmVyYXRlQ29ubmVjdGlvbkhlbHBlciIgdmFsdWU9InRydWUiIC8+DQogIDwvcGFyYW1ldGVyPg0KPC9EZXZFeHByZXNzWHBvR2VuZXJhdG9yU2V0dGluZ3M+" namespace="Sistemaventa.Sistema_Venta" connectionString="XpoProvider=MSSqlServer;data source=localhost;integrated security=SSPI;initial catalog=Sistema_Venta" dataBaseShemaInfo="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" generateConnectionHelper="true" generateStoredProcedures="true" fieldNameCase="Unchanged" generateDefaultConstructors="false" generateClassesForViews="true" useNameOf="true" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <comments>
+    <dataBaseObjectModelHasComments Id="560f2bf1-8cd5-4d5c-b6dd-b0c33a8ba8ab">
+      <comment Id="4052c58a-ccd5-4927-90e2-a335291f3818" text="The 'PK__CambioDo__3214EC0786FC6104' index is ignored, because 'Id' is a key" name="CambioDolarComment">
+        <subjects>
+          <commentReferencesSubjects Id="e7b4c290-4a8a-4e12-8752-68778e2a5b57">
+            <xpObjectMoniker Id="df03704d-32bc-4e90-8832-a54023b0e7a4" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="d8a94678-f01c-41e9-9c55-113c4a0496c1">
+      <comment Id="3deab3a4-692b-464d-a146-e5826bbe9f73" text="The 'PK__Categori__621015C524C00918' index is ignored, because 'IdCateg' is a key" name="CategoriaComment">
+        <subjects>
+          <commentReferencesSubjects Id="cb8b02e8-ead4-4aa7-aabe-a613a013a795">
+            <xpObjectMoniker Id="f325debc-faf6-48d8-80ad-38a6c7f75767" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="22047b92-c81b-403c-a654-28fcbcacdfbc">
+      <comment Id="3b24cda5-3cb3-400f-af7e-7a17962e6d17" text="The 'PK__Cliente__C1961B33F4B9E33D' index is ignored, because 'IdClient' is a key" name="ClienteComment">
+        <subjects>
+          <commentReferencesSubjects Id="625e9f6d-bb67-4212-9e05-80f554208815">
+            <xpObjectMoniker Id="3f7b482c-de85-4755-a9ce-f925a9ce0f34" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="9bf00312-84da-4e85-b705-2fd2173ec689">
+      <comment Id="fc8c277a-45f2-4ed3-974e-cc9f3304b43f" text="The 'PK__Compra__0A5CDB5CAF6D0A15' index is ignored, because 'IdCompra' is a key" name="CompraComment">
+        <subjects>
+          <commentReferencesSubjects Id="40547153-e6c3-4f0e-82ae-6b30fec8e471">
+            <xpObjectMoniker Id="05f1ee1d-79f0-4da1-b5dd-83a997a3da0d" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="4710f16c-5e30-4235-bee6-f59d8fcd53bc">
+      <comment Id="5f042864-b1a7-403e-90d0-1cbc26522f30" text="The 'PK__DetalleC__E046CCBB5437165E' index is ignored, because 'IdDetalleCompra' is a key" name="DetalleCompraComment">
+        <subjects>
+          <commentReferencesSubjects Id="3da9f3d0-e479-4896-b6ff-459510f43ebe">
+            <xpObjectMoniker Id="4f8235c4-ffa2-4a29-bdd9-b2d4d275d36b" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="ac942e12-df87-4697-996d-ada2830be935">
+      <comment Id="beeabd38-67cd-47c0-976a-6737836148da" text="The 'PK__DetalleV__AAA5CEC2DB26D4AA' index is ignored, because 'IdDetalleVenta' is a key" name="DetalleVentaComment">
+        <subjects>
+          <commentReferencesSubjects Id="924789eb-5878-41c7-a512-d4828b053769">
+            <xpObjectMoniker Id="ffac3521-20ce-461b-99ff-94cc3306fcc7" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="6af52cfb-595f-4dbf-a4e6-d3e07c4c6e4c">
+      <comment Id="452219e3-ec2c-4aff-83da-5fda07627f48" text="The 'PK__Empleado__3214EC0718285780' index is ignored, because 'Id' is a key" name="EmpleadoComment">
+        <subjects>
+          <commentReferencesSubjects Id="6b002f95-b09d-463a-a98e-fe749e9cb19f">
+            <xpObjectMoniker Id="53e062f9-4a96-4fb8-82fd-4eaeb6135382" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="e2c1e847-703d-472d-a2f5-5c1b771ff6c2">
+      <comment Id="eb58b309-3af6-4430-8458-e587c8415318" text="The 'PK__EstadoPr__3214EC0733054BAF' index is ignored, because 'Id' is a key" name="EstadoProductoComment">
+        <subjects>
+          <commentReferencesSubjects Id="eb5b305d-4ec2-4106-b14b-401830711803">
+            <xpObjectMoniker Id="a6303e3d-7eca-48d8-b6cb-e9d33a1141fb" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="e0837354-6b5f-4747-9dd2-1ff87beb842e">
+      <comment Id="df93d6f4-b587-4fbe-83c3-e25663eb5611" text="The 'PK__EstadoVe__3214EC07B85217CB' index is ignored, because 'Id' is a key" name="EstadoVentaComment">
+        <subjects>
+          <commentReferencesSubjects Id="02837eee-2666-4628-aa15-49cc1ce6e22c">
+            <xpObjectMoniker Id="14c9b47d-d5e4-4fc3-811e-bb0798aca0d8" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="6ab785c2-8a90-4a44-aa11-7c51e497fb15">
+      <comment Id="3c80de23-3cd9-4d7d-b5e4-0c3ec2d1d979" text="The 'PK__Marca__4076A88753242B86' index is ignored, because 'IdMarca' is a key" name="MarcaComment">
+        <subjects>
+          <commentReferencesSubjects Id="7fcaa902-8c87-4098-9705-7c3b3af60ebc">
+            <xpObjectMoniker Id="ebd20010-d7eb-4e69-baaa-a33b526dc1f4" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="9e415757-103b-4c02-af94-f54e12e9b627">
+      <comment Id="601056f3-b078-4ad0-bd65-046768c24471" text="The 'PK__Negocio__750B6A55B7032434' index is ignored, because 'IdNegocio' is a key" name="NegocioComment">
+        <subjects>
+          <commentReferencesSubjects Id="94597cb4-8406-4b60-9487-258f4f7adae7">
+            <xpObjectMoniker Id="908975ba-a46a-48d6-9e8a-93f031367b6d" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="ca2f0dae-96e0-4611-bdef-7d4fc2e5c458">
+      <comment Id="c43368e4-85f0-4e73-b77d-b38b3c55848f" text="The 'PK__Producto__E40D971DF84E8B44' index is ignored, because 'IdProd' is a key" name="ProductoComment">
+        <subjects>
+          <commentReferencesSubjects Id="05129b1f-a3e0-4cb5-89c3-8f05debcf38a">
+            <xpObjectMoniker Id="0384cea8-bf38-4797-a565-0ff535574483" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="a17a2482-16fc-484e-8803-74f091befb8e">
+      <comment Id="9290bde2-8830-48c8-9330-af430249c2e8" text="The 'PK__Proveedo__E40D970B4B6230FF' index is ignored, because 'IdProv' is a key" name="ProveedorComment">
+        <subjects>
+          <commentReferencesSubjects Id="5e8e39c2-78d3-4caf-8248-06e5487f9efe">
+            <xpObjectMoniker Id="a4e0d2c9-71ef-4087-8440-993e76df83fc" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="8490df69-ef3b-45e2-beaa-03036a8dcd55">
+      <comment Id="ef056760-5493-4120-8740-e37fe78d4df4" text="The 'PK__Rol__2A49584C5A3CA6EB' index is ignored, because 'IdRol' is a key" name="RolComment">
+        <subjects>
+          <commentReferencesSubjects Id="92654ddf-0f8d-4a18-8138-9d81d7749cea">
+            <xpObjectMoniker Id="b5f9cf20-9191-408c-96f8-ffe3a26cccb3" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="daad5abd-a9bd-4e99-aff7-4198dfe5047e">
+      <comment Id="49c37323-1399-4b69-a3e4-1ef4997306a3" text="The 'PK__Tema__9F3A4117852D5CEB' index is ignored, because 'IdTema' is a key" name="TemaComment">
+        <subjects>
+          <commentReferencesSubjects Id="1733a863-c3dc-46a2-8916-7c65606affc2">
+            <xpObjectMoniker Id="5071da49-c217-4a20-be76-77386bd963f0" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+    <dataBaseObjectModelHasComments Id="a69ceefa-27d2-4fa3-9e24-fdfae2b0ad52">
+      <comment Id="b6065f87-628b-4616-91d2-5e24106df4ab" text="The 'PK__Venta__BC1240BD2140D8DF' index is ignored, because 'IdVenta' is a key" name="VentaComment">
+        <subjects>
+          <commentReferencesSubjects Id="7862bc21-c929-4cdb-be9f-c43a3bc8c0a5">
+            <xpObjectMoniker Id="588c737d-0ac2-4924-86e6-573f2384fba0" />
+          </commentReferencesSubjects>
+        </subjects>
+      </comment>
+    </dataBaseObjectModelHasComments>
+  </comments>
+  <storedProcedures>
+    <dataBaseObjectModelHasStoredProcedures Id="be854c7d-2394-4c2b-a3e0-8bf44af38bb7">
+      <storedProcedure Id="39c941ee-9e4d-4435-b6aa-18d604c054e5" name="spAgregarRol">
+        <arguments>
+          <storedProcedureHasArguments Id="05c454be-6a6f-4289-aa79-d525ea40db8e">
+            <argument Id="74616638-fa5c-4596-aea5-cbc78366eb32" name="NombreRol" virtualColumnType="String" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="16856ca8-9918-4046-8bd0-faba191796d3">
+            <argument Id="70f45993-5347-4e86-a10a-9e6bbb4836b6" name="MenuRol" columnType="Boolean" virtualColumnType="Boolean" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="136932bc-cae8-4dfa-88a4-d4cf0b680115">
+            <argument Id="84c78ef3-4ef2-41bd-84a7-225028e727f7" name="MenuEmpleado" columnType="Boolean" virtualColumnType="Boolean" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="5478487d-63b6-4354-b8ae-728aca2de54e">
+            <argument Id="f3a80fb7-040a-4663-a323-f84b9394b61d" name="MenuMantenimiento" columnType="Boolean" virtualColumnType="Boolean" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="b1f040f9-ca83-4cb4-9e60-8f9f637ad1d4">
+            <argument Id="16235771-1010-43fb-bad5-f1ad767dac7c" name="MenuAlmacen" columnType="Boolean" virtualColumnType="Boolean" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="6d903927-16b6-481d-a8ec-cbb278f03d53">
+            <argument Id="ff9dd6d6-c6ef-4d2c-9219-6dbc0c63ea6e" name="MenuCompra" columnType="Boolean" virtualColumnType="Boolean" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="a997f1c8-d67b-41cf-9dfb-47bc47c835a1">
+            <argument Id="0503dbe1-fc54-40af-b2b5-a064c440e825" name="MenuVenta" columnType="Boolean" virtualColumnType="Boolean" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="ebfe83cf-72dd-4148-8f8e-5b6892a71146">
+            <argument Id="58dd780d-4aa5-4add-8318-eb1d4f3e6c84" name="MenuReporte" columnType="Boolean" virtualColumnType="Boolean" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="5e9a201d-50fc-468a-893b-e96861ccc7d9">
+            <argument Id="a06cb06b-6f1b-4e5f-a5eb-f821d36a78ad" name="FechaRegistro" columnType="DateTime" virtualColumnType="DateTime" />
+          </storedProcedureHasArguments>
+        </arguments>
+      </storedProcedure>
+    </dataBaseObjectModelHasStoredProcedures>
+    <dataBaseObjectModelHasStoredProcedures Id="6de9d5c4-19b4-4b74-acce-637c88dd1449">
+      <storedProcedure Id="e050f73e-dcdb-4cce-92ee-a7abedee8084" name="spAgregarTema">
+        <arguments>
+          <storedProcedureHasArguments Id="30560c36-5bb9-4993-a65e-895591c8efb1">
+            <argument Id="b71933fb-7b2c-428c-b0bc-636f0a40267e" name="NombreTema" virtualColumnType="String" />
+          </storedProcedureHasArguments>
+        </arguments>
+      </storedProcedure>
+    </dataBaseObjectModelHasStoredProcedures>
+    <dataBaseObjectModelHasStoredProcedures Id="a7a8d3b2-6aee-4d06-b70f-b55e8e76d503">
+      <storedProcedure Id="b00dc7d7-c642-4645-acea-86c1fee2db8d" name="spEjecutarAgregar">
+        <arguments>
+          <storedProcedureHasArguments Id="5c9a6eb7-e9d1-4ee7-a6e5-ec29156db425">
+            <argument Id="284c770e-7348-4772-a7ea-7c425609ce83" name="spAgregarTema" virtualColumnType="String" />
+          </storedProcedureHasArguments>
+        </arguments>
+      </storedProcedure>
+    </dataBaseObjectModelHasStoredProcedures>
+    <dataBaseObjectModelHasStoredProcedures Id="099fa306-d913-4ebb-8492-60fe6a303b1a">
+      <storedProcedure Id="7a27d961-a4a3-4f39-bdbc-89ee0d85b4f1" name="spExecInsertarCambioDolar">
+        <arguments>
+          <storedProcedureHasArguments Id="219c7dfa-ebf4-4370-80d0-61686e547556">
+            <argument Id="050ae0d0-b302-4911-ac95-60f2c5e4f5dc" name="spInsertarCambioDolar" virtualColumnType="String" />
+          </storedProcedureHasArguments>
+        </arguments>
+      </storedProcedure>
+    </dataBaseObjectModelHasStoredProcedures>
+    <dataBaseObjectModelHasStoredProcedures Id="5b9e891e-5cd2-4ead-b191-d77319afb9ce">
+      <storedProcedure Id="1a5b2d48-b15b-44fb-9177-dd2055b0d34e" name="spInsertarCambioDolar">
+        <arguments>
+          <storedProcedureHasArguments Id="d3ac225b-b0b2-4d52-b856-ec23c9c47751">
+            <argument Id="d417fb6b-d5ea-4e43-b6b2-c1dc30e31123" name="ValorDolar" columnType="Decimal" virtualColumnType="Decimal" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="2f0cef94-3dea-4fcc-bc78-7befb412f56d">
+            <argument Id="2e0ace8f-6774-4aee-b854-1bed53d22d9e" name="FechaRegistro" columnType="DateTime" virtualColumnType="DateTime" />
+          </storedProcedureHasArguments>
+        </arguments>
+      </storedProcedure>
+    </dataBaseObjectModelHasStoredProcedures>
+    <dataBaseObjectModelHasStoredProcedures Id="bc75ef19-c14a-404b-bcaa-31a8dc1250ef">
+      <storedProcedure Id="1fe98b09-a968-46ab-b502-253f9f651197" name="spModificarTema">
+        <arguments>
+          <storedProcedureHasArguments Id="fe9404dc-fe72-448b-a721-85dceae119c4">
+            <argument Id="4f8ec7dd-3300-41a1-ac83-397871a178cb" name="Id" columnType="Int32" virtualColumnType="Int32" />
+          </storedProcedureHasArguments>
+          <storedProcedureHasArguments Id="0e9a8c31-1b2a-41ff-a48a-7119ba7bb4e0">
+            <argument Id="8db3db92-fcc5-4a56-beb0-02e0e4168ed8" name="IdTema" columnType="Int32" virtualColumnType="Int32" />
+          </storedProcedureHasArguments>
+        </arguments>
+      </storedProcedure>
+    </dataBaseObjectModelHasStoredProcedures>
+  </storedProcedures>
+  <classes>
+    <dataBaseObjectModelHasClasses Id="0a0b248c-fd35-4c38-8e3b-079c2c151e11">
+      <xpObject Id="df03704d-32bc-4e90-8832-a54023b0e7a4" name="CambioDolar" baseClass="XPLiteObject" userFileName="CambioDolar" designerFileName="CambioDolar.Designer" className="CambioDolar" virtualBaseClass="XPLiteObject" persistent="CambioDolar" virtualName="CambioDolar">
+        <fields>
+          <generalXpObjectHasFields Id="76cfde09-de94-4230-8003-696291ca4836">
+            <field Id="daec3bda-25eb-42cd-8513-75fcebc9997d" name="Id" columnType="Int32" key="true" isIdentity="true" persistent="Id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="430a22c5-054b-4501-8b34-d93c5a718362">
+            <field Id="fbceb425-8bed-439e-80c7-ae58752ff01f" name="ValorDolar" columnType="Decimal" persistent="ValorDolar" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" defaultValue="Decimal#0" dbDefaultValue="((0))" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="63575468-a4d8-4684-844c-2187b949e270">
+            <field Id="83876cd0-59c7-4ce7-87bc-b1049ae87f3e" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="4543e9e2-ec30-4032-b138-68c6cccd9da1" sourceCollectionName="Ventas" name="VentaReferencesCambioDolar" targetFieldName="IdCambio">
+            <xpObjectMoniker Id="588c737d-0ac2-4924-86e6-573f2384fba0" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="3354edf5-6187-446a-9aec-ee7c51ad7cb8">
+            <collectionField Id="8e2a6cc1-21a6-4cdc-b2fa-1e2abad2c276" name="Ventas" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="bc7d981d-3dfc-4a34-9ebd-fbea668e5905">
+      <xpObject Id="f325debc-faf6-48d8-80ad-38a6c7f75767" name="Categoria" baseClass="XPLiteObject" userFileName="Categoria" designerFileName="Categoria.Designer" className="Categoria" virtualBaseClass="XPLiteObject" persistent="Categoria" virtualName="Categoria">
+        <fields>
+          <generalXpObjectHasFields Id="5cd53f86-b0ba-417e-8a30-704b62f5654f">
+            <field Id="c98257d4-0517-4830-a5d2-4dec0b1efbc9" name="IdCateg" columnType="Int32" key="true" isIdentity="true" persistent="IdCateg" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f98273c7-8a41-4b64-a25c-bbf1d9afffbc">
+            <field Id="4bc1ce1b-98d2-4e9f-8d70-8f72d4baf538" name="NombreCateg" persistent="NombreCateg" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b6c63f63-57fc-446f-b83c-0702965bcd9c">
+            <field Id="fa22e9e4-9811-444c-9ab4-0af1897d8782" name="Descripcion" persistent="Descripcion" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="120" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="140d42d6-693c-4d34-9365-698cfbde527e">
+            <field Id="5cf4e7b6-aa1b-4613-893e-914231c5946b" name="Estado" persistent="Estado" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="25" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="440b9e3b-e8c7-40bc-8275-4047443c9198">
+            <field Id="795c207b-815d-43ad-9576-359383d3e94d" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="20c96c82-8ef1-4bd8-997a-5fd3faa4332a" sourceCollectionName="Productoes" name="ProductoReferencesCategoria" targetFieldName="IdCateg">
+            <xpObjectMoniker Id="0384cea8-bf38-4797-a565-0ff535574483" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="5ced2050-80ff-4880-9bb7-c246fbb6989e">
+            <collectionField Id="483c8708-5938-41c9-822d-c5dcc83cfe9f" name="Productoes" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="cc30bb08-0456-42c1-8fc6-eb68b5836c96">
+      <xpObject Id="3f7b482c-de85-4755-a9ce-f925a9ce0f34" name="Cliente" baseClass="XPLiteObject" userFileName="Cliente" designerFileName="Cliente.Designer" className="Cliente" virtualBaseClass="XPLiteObject" persistent="Cliente" virtualName="Cliente">
+        <fields>
+          <generalXpObjectHasFields Id="eb92a5d6-443d-4b0f-b1a3-0e525e7756d6">
+            <field Id="4a7e01a6-845f-4539-b99b-471d18e55ca6" name="IdClient" columnType="Int32" key="true" isIdentity="true" persistent="IdClient" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5a1b4295-cb97-4026-965a-e22075ceb798">
+            <field Id="2f27110d-cb8f-49aa-b4a2-a4d26f1bb528" name="NombreClient" persistent="NombreClient" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="90ca3799-2329-4796-9612-acdd9e9aff36">
+            <field Id="3ec70b36-569a-47d0-8e5f-200ca3acacba" name="ApellidoClient" persistent="ApellidoClient" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="e79000a3-d20f-4b82-8ff1-184023bcf165">
+            <field Id="b927b456-c770-4311-abaa-da9e6190bc2b" name="SexoClient" persistent="SexoClient" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="9" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="632e6011-a545-4243-a9bc-d9599009bce9">
+            <field Id="7286c8d3-4324-49d6-8ec6-4fbb8b8a6967" name="DocumentoCLient" persistent="DocumentoCLient" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="52cb6687-24eb-484c-8087-bf5198231430">
+            <field Id="cee40815-5016-49af-89aa-b6ce3da387a5" name="CelularClient" persistent="CelularClient" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="9" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="57bb5906-0328-4187-bd88-fa5d80fbfe4b">
+            <field Id="53c8610c-a592-4fd0-9505-fe38babc89c2" name="CorreoClient" persistent="CorreoClient" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="80" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="55f93534-49a4-440f-948e-f12332e5ba8b">
+            <field Id="d33e1325-baf4-45d4-bf9d-0f26235fcfd9" name="Estado" persistent="Estado" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3422e7b8-bfb2-4aee-aff3-c8e4ec060fd3">
+            <field Id="062da983-f57e-451c-8583-99690544949c" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="46f6343a-9f2d-4d8d-976c-1868be5ee456" sourceCollectionName="Ventas" name="VentaReferencesCliente" targetFieldName="IdClient">
+            <xpObjectMoniker Id="588c737d-0ac2-4924-86e6-573f2384fba0" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="85ff6291-3f1b-4266-9763-aa45ee3bf4f9">
+            <collectionField Id="e12184bc-d59a-4ba1-9123-7502cc2f334d" name="Ventas" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="5a0c2a8e-73c7-4f06-953a-88f41617a7ea">
+      <xpObject Id="05f1ee1d-79f0-4da1-b5dd-83a997a3da0d" name="Compra" baseClass="XPLiteObject" userFileName="Compra" designerFileName="Compra.Designer" className="Compra" virtualBaseClass="XPLiteObject" persistent="Compra" virtualName="Compra">
+        <fields>
+          <generalXpObjectHasFields Id="34f98dda-9c69-4ee8-8f34-2fa51b91dd2e">
+            <field Id="ef4569b5-b780-4cb0-b948-eb4c001a4da6" name="IdCompra" columnType="Int32" key="true" isIdentity="true" persistent="IdCompra" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3a3a8b6f-973c-434b-a42d-78b83cce875b">
+            <field Id="8899ea9d-aa0c-45fb-b8cc-a18f982cf3dd" name="IdProv" columnType="Int32" persistent="IdProv" virtualColumnType="Proveedor" logicalType="Proveedor" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="89a768f2-c21f-4bf0-a80f-0249f08764a2">
+            <field Id="7caaeee6-ff66-48a1-bcf7-e8a9cff91dee" name="IdEmpleado" columnType="Int32" persistent="IdEmpleado" virtualColumnType="Empleado" logicalType="Empleado" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9ad86375-e4cb-456f-bb4a-632c764a9021">
+            <field Id="5b2d84e1-af39-49e9-9d49-e49ae41bda33" name="TipoDocumento" persistent="TipoDocumento" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c12070aa-42be-43af-9e91-5a092dcca16d">
+            <field Id="a0b0c59d-3d9d-4e85-82f8-c323107f8359" name="Documento" persistent="Documento" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="15" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5f34426b-ad8d-42fd-a401-16b2b672b46e">
+            <field Id="8b3e6c78-a559-442d-b3d3-25261b3e77fd" name="Cantidad" columnType="Int32" persistent="Cantidad" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="101783de-d43c-4c02-9e56-9337e56e62ef">
+            <field Id="8d50182e-954e-43b2-bf20-6c272f3aec69" name="MontoTotal" columnType="Decimal" persistent="MontoTotal" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1a4844f6-bc89-45f2-95e4-fd8ef81906e2">
+            <field Id="2cb52adc-af22-4cc9-b569-d764fc2c2e9b" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="c13a8f23-4982-4472-a822-3c93fe12aeb2" sourceCollectionName="DetalleCompras" name="DetalleCompraReferencesCompra" targetFieldName="IdCompra">
+            <xpObjectMoniker Id="4f8235c4-ffa2-4a29-bdd9-b2d4d275d36b" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="7c327068-d429-4577-be0c-ce363b0f5715">
+            <collectionField Id="01a6b7e0-f743-4507-af97-66c19d76bb06" name="DetalleCompras" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="e84b10d2-c029-44ce-8883-e172212164cf">
+      <xpObject Id="4f8235c4-ffa2-4a29-bdd9-b2d4d275d36b" name="DetalleCompra" baseClass="XPLiteObject" userFileName="DetalleCompra" designerFileName="DetalleCompra.Designer" className="DetalleCompra" virtualBaseClass="XPLiteObject" persistent="DetalleCompra" virtualName="DetalleCompra">
+        <fields>
+          <generalXpObjectHasFields Id="9415d7ea-52eb-4356-bfa6-07fc05d01074">
+            <field Id="01701b66-32f3-4cab-a4c2-06b00aa70093" name="IdDetalleCompra" columnType="Int32" key="true" isIdentity="true" persistent="IdDetalleCompra" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b09e813c-762b-4113-bac9-37c3cd1c91c8">
+            <field Id="cbab0fb9-f7e7-4333-893e-6224a2b9be7c" name="IdCompra" columnType="Int32" persistent="IdCompra" virtualColumnType="Compra" logicalType="Compra" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="0f0952be-94a7-424f-893c-e63a9bfc19fd">
+            <field Id="c7c6c2bd-acd0-406e-989b-b51f2a24ac68" name="IdProd" columnType="Int32" persistent="IdProd" virtualColumnType="Producto" logicalType="Producto" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="98dfa2af-bfdb-4c03-9673-926a4e5a8dee">
+            <field Id="2cfa23eb-5764-407f-bbd1-3250aa22ae32" name="Cantidad" columnType="Int32" persistent="Cantidad" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="6acc769c-0d28-4a13-b359-bcfe2eec8d49">
+            <field Id="96a190e3-9ee8-4e71-9beb-1fb86a3c2b68" name="PrecioCompra" columnType="Decimal" persistent="PrecioCompra" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" defaultValue="Decimal#0" dbDefaultValue="((0))" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="18686b14-bba5-4b52-8542-97f8e2e4341f">
+            <field Id="50b749ca-dfba-4f91-9864-8deedb5bba87" name="SubTotal" columnType="Decimal" persistent="SubTotal" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" defaultValue="Decimal#0" dbDefaultValue="((0))" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="dc5c7e83-7fb4-439a-b6dc-1a7932aa429b">
+      <xpObject Id="ffac3521-20ce-461b-99ff-94cc3306fcc7" name="DetalleVenta" baseClass="XPLiteObject" userFileName="DetalleVenta" designerFileName="DetalleVenta.Designer" className="DetalleVenta" virtualBaseClass="XPLiteObject" persistent="DetalleVenta" virtualName="DetalleVenta">
+        <fields>
+          <generalXpObjectHasFields Id="6653ecb5-c6d1-4fb7-9fa2-47e19cfcab4d">
+            <field Id="a17fddbf-dbf0-44be-aaf8-bd167b5e4eaf" name="IdDetalleVenta" columnType="Int32" key="true" isIdentity="true" persistent="IdDetalleVenta" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="42c2f332-0ac3-48b4-b5e9-c423d7ccc9aa">
+            <field Id="a6102239-96ac-4f60-beb6-ffe2e058e076" name="IdVenta" columnType="Int32" persistent="IdVenta" virtualColumnType="Venta" logicalType="Venta" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="387e6035-ca07-44a1-8f2c-e300375f4ac8">
+            <field Id="4f9d145e-952a-4c06-a945-8d91d383ff7e" name="IdProd" columnType="Int32" persistent="IdProd" virtualColumnType="Producto" logicalType="Producto" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="a72bea0c-93ca-4b98-a758-559a5f1d984e">
+            <field Id="5ad49d29-3b0f-4517-8058-456032d5c16a" name="PrecioVenta" columnType="Decimal" persistent="PrecioVenta" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" defaultValue="Decimal#0" dbDefaultValue="((0))" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b1aaac5f-fe97-4e32-be7c-a1350ece3986">
+            <field Id="908d5eb3-b013-4af8-bf19-aaa83cd0e31a" name="SubTotal" columnType="Decimal" persistent="SubTotal" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" defaultValue="Decimal#0" dbDefaultValue="((0))" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9ed9cab7-1b35-4d46-b37b-5a97e9bf665f">
+            <field Id="01aa78b0-7c01-4e99-a60a-0917cb90e17b" name="Stock" columnType="Int32" persistent="Stock" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="9e3d6fb7-5085-4ef8-b541-5d00fb9fb9af">
+      <xpObject Id="53e062f9-4a96-4fb8-82fd-4eaeb6135382" name="Empleado" baseClass="XPLiteObject" userFileName="Empleado" designerFileName="Empleado.Designer" className="Empleado" virtualBaseClass="XPLiteObject" persistent="Empleado" virtualName="Empleado">
+        <fields>
+          <generalXpObjectHasFields Id="845fcf60-3e23-4aed-99c6-098d359936b7">
+            <field Id="9be2e95d-7f92-4232-a6ba-74a4b0aa542b" name="Id" columnType="Int32" key="true" isIdentity="true" persistent="Id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="0e569e2a-d411-4d1f-a948-6dbadc7616e0">
+            <field Id="93b50159-685e-49b0-b0dc-b0bb22542cba" name="Nombre" persistent="Nombre" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="00691e66-e813-4340-9bf1-80a09cf7c6e9">
+            <field Id="a5be3677-b1c4-4d43-86a3-8d647753707e" name="Apellido" persistent="Apellido" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9709949f-48b4-48bb-a043-6be033350f62">
+            <field Id="43a94d47-1819-41a8-87e5-d3550853b50d" name="Sexo" persistent="Sexo" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="9" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="291bf59e-c7ce-4e80-8bd5-8b28c8b7f9c3">
+            <field Id="71fb17c4-732d-411b-8083-65ed19b5cad0" name="Cedula" persistent="Cedula" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="16" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="33591d71-d312-4c0c-aaf6-2b50f62f5e2d">
+            <field Id="d44fc0ae-984b-486e-ad9c-95ab85273e81" name="Celular" persistent="Celular" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="9" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="fd6467f4-4f6e-4cce-b552-0b7ae8fe8bb5">
+            <field Id="4897f53d-b291-423e-a679-93ad9ce53be4" name="Direccion" persistent="Direccion" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="200" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="500892d8-3c56-41e2-b7e4-eab2d503b34e">
+            <field Id="9e44d030-7ba4-476d-84f6-39cae87803f4" name="Correo" persistent="Correo" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="80" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c75e39a2-a724-431a-9909-5893653ddfd6">
+            <field Id="c39acb09-5f47-45b4-8868-45702851f87a" name="NombreAcceso" persistent="NombreAcceso" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="470cbd3f-0e0d-4600-92dc-da62f8dc1f7b">
+            <field Id="3b41c084-0049-4879-bc1b-298074b48993" name="Contrasena" persistent="Contrasena" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="41da7f9f-e1ff-4fc0-b543-9cd1da3016a9">
+            <field Id="22f9f405-42bc-4ea7-85bd-89c48b1ce2cb" name="IdRol" columnType="Int32" persistent="IdRol" virtualColumnType="Rol" logicalType="Rol" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="845598a5-f5fb-4a2b-9028-ec4ab4ef36f1">
+            <field Id="d4d97b10-1972-4eb1-99b4-f155bb413aac" name="Estado" columnType="Boolean" persistent="Estado" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="fe766cf8-0d7a-46d9-afbd-3769b1c4111f">
+            <field Id="ecb4d4fa-20a7-412e-aaac-5f100034cbaa" name="IdTema" columnType="Int32" persistent="IdTema" virtualColumnType="Tema" logicalType="Tema" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5f4b18f0-2d4a-49e0-b935-22630200fce1">
+            <field Id="264ea895-d783-49bf-aec5-c1ca99f63403" name="Foto" columnType="ByteArray" persistent="Foto" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="535ed753-f592-4a9b-a338-18fb160687f8">
+            <field Id="13bc6751-3a5e-4afe-84bd-1fa886f66ad3" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="111abf87-1a73-4b3b-b473-f21d9de1ef34" sourceCollectionName="Compras" name="CompraReferencesEmpleado" targetFieldName="IdEmpleado">
+            <xpObjectMoniker Id="05f1ee1d-79f0-4da1-b5dd-83a997a3da0d" />
+          </simpleAssociation>
+          <simpleAssociation Id="050dbfb9-76e6-4bcf-95be-08aee3e089cb" sourceCollectionName="Ventas" name="VentaReferencesEmpleado" targetFieldName="IdEmpleado">
+            <xpObjectMoniker Id="588c737d-0ac2-4924-86e6-573f2384fba0" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="35302e19-0321-42f2-9079-fae33eac4ea0">
+            <collectionField Id="c1680b83-125b-4f52-ba9f-071c864cbe3c" name="Compras" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="8f0a4df5-5e42-45ed-a659-595f56f31b77">
+            <collectionField Id="d4430f46-1300-41c4-bffe-4be2729448a5" name="Ventas" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="f809bb4e-8614-447b-b0b7-c1d816a86771">
+      <xpObject Id="a6303e3d-7eca-48d8-b6cb-e9d33a1141fb" name="EstadoProducto" baseClass="XPLiteObject" userFileName="EstadoProducto" designerFileName="EstadoProducto.Designer" className="EstadoProducto" virtualBaseClass="XPLiteObject" persistent="EstadoProducto" virtualName="EstadoProducto">
+        <fields>
+          <generalXpObjectHasFields Id="e49f3fbf-3c6f-4224-9413-8db88b8ce179">
+            <field Id="8885f585-1e28-404a-9c5b-9d1e84b7c8ae" name="Id" columnType="Int32" key="true" isIdentity="true" persistent="Id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="702afcaf-8a04-473d-b64e-6bf170ae7a82">
+            <field Id="188bf60b-9f74-42c2-99cc-a893dc00d513" name="IdProducto" columnType="Int32" persistent="IdProducto" virtualColumnType="Producto" logicalType="Producto" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1cf698d2-f067-45f3-9f33-42d86ce57f54">
+            <field Id="568f9ff7-7957-4ded-9c01-084abfdb2fcd" name="Estado" persistent="Estado" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="30" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="695c9677-3536-4040-b7bb-f5fd1602f29e">
+            <field Id="1508cdef-3fed-4972-9d55-8cfe5e396ae9" name="Fecha" columnType="DateTime" persistent="Fecha" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="5379d955-b7bb-4590-b560-c47a5e2506d3">
+      <xpObject Id="14c9b47d-d5e4-4fc3-811e-bb0798aca0d8" name="EstadoVenta" baseClass="XPLiteObject" userFileName="EstadoVenta" designerFileName="EstadoVenta.Designer" className="EstadoVenta" virtualBaseClass="XPLiteObject" persistent="EstadoVenta" virtualName="EstadoVenta">
+        <fields>
+          <generalXpObjectHasFields Id="594e61cf-50a0-4c71-8c4a-c883b6e4d7eb">
+            <field Id="7be5e043-97fb-4516-8c48-0e4beba07be8" name="Id" columnType="Int32" key="true" isIdentity="true" persistent="Id" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c6eeb867-ee64-4bdd-bb6c-7317f21a0270">
+            <field Id="8c870449-7128-44a9-866d-a46d627ef604" name="IdVenta" columnType="Int32" persistent="IdVenta" virtualColumnType="Venta" logicalType="Venta" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="73ca1159-e923-4e55-b2ea-db6e9cab198f">
+            <field Id="22435ba4-bcd3-4deb-8d1e-569017aebf98" name="IdProducto" columnType="Int32" persistent="IdProducto" virtualColumnType="Producto" logicalType="Producto" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f9059ad9-d1a4-4f12-ae39-8ea1a89572bc">
+            <field Id="596ef27b-f5f5-4de5-8c41-b0a242be688e" name="Estado" persistent="Estado" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="40" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3f267e3f-9eea-4a45-b1ce-6258e1cdef7d">
+            <field Id="041a8987-74bd-4385-bd38-b7affdd40873" name="FechaDevolucion" columnType="DateTime" persistent="FechaDevolucion" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:54" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="ad858565-c861-4691-9f70-f23eda90b460">
+      <xpObject Id="ebd20010-d7eb-4e69-baaa-a33b526dc1f4" name="Marca" baseClass="XPLiteObject" userFileName="Marca" designerFileName="Marca.Designer" className="Marca" virtualBaseClass="XPLiteObject" persistent="Marca" virtualName="Marca">
+        <fields>
+          <generalXpObjectHasFields Id="0ac8bdec-f84a-40f9-bf1a-080fff50c83f">
+            <field Id="e62fd2fa-b908-4143-913d-57bbae5d958b" name="IdMarca" columnType="Int32" key="true" isIdentity="true" persistent="IdMarca" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5ea0c52a-063a-4119-8fb3-489205eacf32">
+            <field Id="7071b28f-6088-4e3d-ad36-7943e6cc6a59" name="Nombre" persistent="Nombre" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5bd6e626-3e82-4918-b787-af6daa1b7a40">
+            <field Id="194600a6-4d98-4a3c-9a8d-20154a992d49" name="Logotipo" columnType="ByteArray" persistent="Logotipo" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="bdf30ad3-ea1b-4cbf-b8e1-8863ba53bf1e">
+            <field Id="339e247c-cfb6-489c-afd9-fa37004e81e0" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="da18b36a-c210-4f5b-87de-d191fea842dd" sourceCollectionName="Productoes" name="ProductoReferencesMarca" targetFieldName="IdMarca">
+            <xpObjectMoniker Id="0384cea8-bf38-4797-a565-0ff535574483" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="3f750631-d985-4984-a918-6aa356ad67c0">
+            <collectionField Id="c8410d55-0f13-420b-b3b4-a12f794eadea" name="Productoes" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="d82f7019-ba6a-4d60-8edc-f4df8ab7eceb">
+      <xpObject Id="908975ba-a46a-48d6-9e8a-93f031367b6d" name="Negocio" baseClass="XPLiteObject" userFileName="Negocio" designerFileName="Negocio.Designer" className="Negocio" virtualBaseClass="XPLiteObject" persistent="Negocio" virtualName="Negocio">
+        <fields>
+          <generalXpObjectHasFields Id="c1db8136-8514-4dd8-b27b-e7ff54bf107d">
+            <field Id="5a015d5b-1f41-4ff9-bb8e-64a0a627f1d7" name="IdNegocio" columnType="Int32" key="true" isIdentity="true" persistent="IdNegocio" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="267c0b56-9123-44aa-82d4-244391554d1f">
+            <field Id="0321ce33-d70e-4a33-87c9-f77bc7898ca2" name="Nombre" persistent="Nombre" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="4fd00073-c4ad-4b4b-a37a-cc1fda7c70f5">
+            <field Id="9775bf4e-de4b-41a6-a5c0-3ca7ce181a41" name="RUC" persistent="RUC" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="11" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="cd3b4c1a-3b2e-4607-8bdd-00338a2c1b93">
+            <field Id="f8d9e6f9-90f2-4a2e-8d2d-d4f855ba17f4" name="Direccion" persistent="Direccion" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="200" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="6f5e7dff-2da4-4545-bef9-44a143bf4aa5">
+            <field Id="90f8c25c-76c5-48da-9d58-fb5b9be316fd" name="Logo" columnType="ByteArray" persistent="Logo" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="7395e7ec-8e49-40f3-8986-1a9cf138463c">
+      <xpObject Id="0384cea8-bf38-4797-a565-0ff535574483" name="Producto" baseClass="XPLiteObject" userFileName="Producto" designerFileName="Producto.Designer" className="Producto" virtualBaseClass="XPLiteObject" persistent="Producto" virtualName="Producto">
+        <fields>
+          <generalXpObjectHasFields Id="bedf68be-4fba-44e7-afb1-318451e981a6">
+            <field Id="bab94c1b-9a8e-4520-ac96-3338f3dbea7d" name="IdProd" columnType="Int32" key="true" isIdentity="true" persistent="IdProd" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="59641e0c-a384-4c3b-8042-c3655a1568cb">
+            <field Id="9dcc0c7c-da01-4c36-b316-c8044f68ea08" name="Codigo" persistent="Codigo" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="15" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b8c3c2b3-afc3-4fb3-9380-47776686ac87">
+            <field Id="917ca5b2-6685-4b84-9b47-0e6ccf545d2d" name="Nombre" persistent="Nombre" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="230251d9-aba0-42de-8855-cc333ff36fab">
+            <field Id="1f933c1b-f064-4179-9205-26778fa4e8de" name="Descripcion" persistent="Descripcion" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="120" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="e9b569fb-65b4-4d46-a2c4-423fedfbe7aa">
+            <field Id="0a566f96-2df4-4bd8-b654-5f476725b253" name="IdCateg" columnType="Int32" persistent="IdCateg" virtualColumnType="Categoria" logicalType="Categoria" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="ab85803d-8e65-446e-9ae9-30052a7345c0">
+            <field Id="bdb5af55-d038-47e5-b43b-41505dcfeb41" name="IdMarca" columnType="Int32" persistent="IdMarca" virtualColumnType="Marca" logicalType="Marca" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="35f4b8f9-3c0a-4906-bb8a-3bb803454349">
+            <field Id="378f1f49-ee5c-42c2-bd40-7006c6b30240" name="Estado" persistent="Estado" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3ee7f7a5-fd8d-40a8-93f3-8adef7d0f0d1">
+            <field Id="f20ac0b3-8f7d-47fd-b5ad-ac3fb0cbb6f8" name="ImagenArticulo" columnType="ByteArray" persistent="ImagenArticulo" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="38b4c915-3890-4e51-b627-456100e7e08e">
+            <field Id="99b09a57-5c4e-4cb0-988d-0bc3d60d064a" name="FechaVence" persistent="FechaVence" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="dea2e7dd-a817-4431-9470-63c0c4a79c21">
+            <field Id="96f1db42-e2b7-45c9-a67a-a9518d406bf8" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="c4f1b588-747a-4edb-9f43-f10413a3e8d3" sourceCollectionName="DetalleCompras" name="DetalleCompraReferencesProducto" targetFieldName="IdProd">
+            <xpObjectMoniker Id="4f8235c4-ffa2-4a29-bdd9-b2d4d275d36b" />
+          </simpleAssociation>
+          <simpleAssociation Id="98e83ee9-db95-43dc-b93d-ab52f1bcb2c4" sourceCollectionName="DetalleVentas" name="DetalleVentaReferencesProducto" targetFieldName="IdProd">
+            <xpObjectMoniker Id="ffac3521-20ce-461b-99ff-94cc3306fcc7" />
+          </simpleAssociation>
+          <simpleAssociation Id="153c0526-7452-43e2-b54f-5e542db6bac7" sourceCollectionName="EstadoProductoes" name="EstadoProductoReferencesProducto" targetFieldName="IdProducto">
+            <xpObjectMoniker Id="a6303e3d-7eca-48d8-b6cb-e9d33a1141fb" />
+          </simpleAssociation>
+          <simpleAssociation Id="930e1ee8-f9b8-4a2a-a5b1-5e87abe8219f" sourceCollectionName="EstadoVentas" name="EstadoVentaReferencesProducto" targetFieldName="IdProducto">
+            <xpObjectMoniker Id="14c9b47d-d5e4-4fc3-811e-bb0798aca0d8" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="63101de0-4e58-4d44-b72f-dd4e4cec0c4b">
+            <collectionField Id="3e768c58-8513-466a-a0ca-86bb9383e366" name="DetalleCompras" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="f98456d4-ccd1-4139-9853-743a9c87607d">
+            <collectionField Id="998f1192-4f3e-4738-803e-3869db109ddb" name="DetalleVentas" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="ab5cbbb9-5291-4d4b-a0ab-ef1c5256b2d9">
+            <collectionField Id="d7a7ca75-d696-4598-ba37-bc5116dbfbf4" name="EstadoProductoes" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="d0460dfd-db60-4f0c-b41e-f4c967df0d03">
+            <collectionField Id="448a248c-8526-474a-9bc0-7257314fb575" name="EstadoVentas" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="e0856758-67b2-46e0-bd9b-847c9ced20eb">
+      <xpObject Id="a4e0d2c9-71ef-4087-8440-993e76df83fc" name="Proveedor" baseClass="XPLiteObject" userFileName="Proveedor" designerFileName="Proveedor.Designer" className="Proveedor" virtualBaseClass="XPLiteObject" persistent="Proveedor" virtualName="Proveedor">
+        <fields>
+          <generalXpObjectHasFields Id="74263dc5-5ca2-440e-8a67-707d3dba621b">
+            <field Id="d3020016-4976-472a-bd2c-478b824c82e8" name="IdProv" columnType="Int32" key="true" isIdentity="true" persistent="IdProv" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="0935079b-0cc1-4015-8fbb-f41e8252a606">
+            <field Id="c43a01a5-e522-4bd4-b295-625ffbda1b2a" name="NombreProv" persistent="NombreProv" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="d7eb902b-6923-4ae1-9e58-d7d9f67e24dd">
+            <field Id="c8e8a862-cbc6-4c49-8d4e-d155556591f3" name="Direccion" persistent="Direccion" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="200" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f4a9fdf7-a171-4af2-9768-6e927c8a9f49">
+            <field Id="386d7914-0c80-41e1-a237-e2ed051328df" name="DocumentoProv" persistent="DocumentoProv" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="12" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="212c4314-bb31-49c8-bc30-1f8b90dc051a">
+            <field Id="b15d01f8-9956-4a04-8e67-84c7930ca184" name="RazonSocialProv" persistent="RazonSocialProv" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9b886778-79f3-4d5b-b1f7-565c0099e12d">
+            <field Id="68ddc9c9-d3ff-4f84-a65a-898ca179ce3a" name="CorreoProv" persistent="CorreoProv" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="80" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9de0d5e9-a0e3-41d4-b350-907f503fd0f6">
+            <field Id="6276c449-6f5f-4714-a915-4dc3637add66" name="TelefonoProv" persistent="TelefonoProv" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="9" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="447e2d39-69e4-4ca4-a3e1-696e023ce1d3">
+            <field Id="752628e9-703c-449a-be50-d76d84c607ca" name="EstadoProv" persistent="EstadoProv" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="10" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="4da617f1-fcae-4e03-b931-2552e3500d9d">
+            <field Id="09defbaf-26f8-4189-b0fc-0f0f7f4ffc6f" name="Logotipo" columnType="ByteArray" persistent="Logotipo" virtualColumnType="ByteArray" delayedUpdateModifiedOnly="false" size="Unlimited" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1240107b-dae3-42b5-abf9-e6997075aa45">
+            <field Id="c3600739-5038-4471-84c8-1d462662b8bb" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="2dcd8a56-07ed-40ea-b5b0-77357fd3fdd1" sourceCollectionName="Compras" name="CompraReferencesProveedor" targetFieldName="IdProv">
+            <xpObjectMoniker Id="05f1ee1d-79f0-4da1-b5dd-83a997a3da0d" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="322c6a36-a227-487f-beaf-c3e72a145dfd">
+            <collectionField Id="4ddc550c-7808-45e6-a86e-450a41277f90" name="Compras" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="6c862509-115a-47a1-9c12-0f68b5f46551">
+      <xpObject Id="b5f9cf20-9191-408c-96f8-ffe3a26cccb3" name="Rol" baseClass="XPLiteObject" userFileName="Rol" designerFileName="Rol.Designer" className="Rol" virtualBaseClass="XPLiteObject" persistent="Rol" virtualName="Rol">
+        <fields>
+          <generalXpObjectHasFields Id="c5554eec-2e75-484b-a187-b588f3bfa878">
+            <field Id="abd4705e-8d17-4838-b328-8d7c17b3cadc" name="IdRol" columnType="Int32" key="true" isIdentity="true" persistent="IdRol" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3600e5ca-3e2e-4cc2-b323-436fa1443e0a">
+            <field Id="ee19d37a-0ed5-4b8d-8c35-9727fce42875" name="NombreRol" persistent="NombreRol" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="fbb61fbe-47b2-41d9-b852-1116fed9f1bc">
+            <field Id="b860a122-aa7a-4db0-b27d-13b2d2d8d816" name="MenuRol" columnType="Boolean" persistent="MenuRol" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="cdda9c44-b8eb-409d-aa7d-05b2e54c99aa">
+            <field Id="2b00c89b-1601-4c3b-bea0-1aacca58a19a" name="MenuEmpleado" columnType="Boolean" persistent="MenuEmpleado" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b118c7a2-5fc3-4aa1-b0f9-937fc522a15c">
+            <field Id="a71ef050-f9cf-4169-a245-a25e0e9ddc55" name="MenuMantenimiento" columnType="Boolean" persistent="MenuMantenimiento" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="611b74a5-a7df-496d-bcb9-af5c9e6fe060">
+            <field Id="258c3d78-48fc-4cbe-9135-295627eef6d4" name="MenuAlmacen" columnType="Boolean" persistent="MenuAlmacen" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="7e4ce965-52f7-4536-afb8-b782f8a1f744">
+            <field Id="65b18d0f-74f6-4b07-96ba-2d73a4e66772" name="MenuCompra" columnType="Boolean" persistent="MenuCompra" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1983dbec-cd5c-4f23-b559-ec613a853ab9">
+            <field Id="d6dd985a-d564-4b7e-b44a-a959769168ff" name="MenuVenta" columnType="Boolean" persistent="MenuVenta" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="133f162a-353c-4de7-8a02-a5e6e4e65144">
+            <field Id="0452167f-a98d-4f35-8e89-ddea8bab26d2" name="MenuEstado" columnType="Boolean" persistent="MenuEstado" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="6134078c-7b9c-48e7-9a91-bcece2489307">
+            <field Id="841045df-4ee3-48a6-b9a7-639b98d68224" name="MenuReporte" columnType="Boolean" persistent="MenuReporte" virtualColumnType="Boolean" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="43a9a389-98fe-4a4a-a890-82dff69450cc">
+            <field Id="b4e1fe69-2ac8-41d7-afb7-0a5f67176e92" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="8ead9976-1cd0-49c0-a7a0-ceac3d605873" sourceCollectionName="Empleadoes" name="EmpleadoReferencesRol" targetFieldName="IdRol">
+            <xpObjectMoniker Id="53e062f9-4a96-4fb8-82fd-4eaeb6135382" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="9e227fc3-1b12-44e3-ba93-cc72fe0ab9b6">
+            <collectionField Id="7e00907c-c8b4-4000-ae6a-ddd0bae83120" name="Empleadoes" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="b63f94fa-b6a0-4016-9d98-7da2af1608be">
+      <xpObject Id="5071da49-c217-4a20-be76-77386bd963f0" name="Tema" baseClass="XPLiteObject" userFileName="Tema" designerFileName="Tema.Designer" className="Tema" virtualBaseClass="XPLiteObject" persistent="Tema" virtualName="Tema">
+        <fields>
+          <generalXpObjectHasFields Id="ad00b044-ace3-42ab-ae6f-bc781d7cd790">
+            <field Id="25e6d647-293e-474f-8b19-1bb45216def0" name="IdTema" columnType="Int32" key="true" isIdentity="true" persistent="IdTema" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="820c9ad4-103b-4e25-9caa-103fa61e8bee">
+            <field Id="ee0c3fd0-2bd9-4542-baee-3752a7f3f0c4" name="NombreTema" persistent="NombreTema" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="60" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="83c0779a-8ded-4ae0-975c-e8627ffd3047" sourceCollectionName="Empleadoes" name="EmpleadoReferencesTema" targetFieldName="IdTema">
+            <xpObjectMoniker Id="53e062f9-4a96-4fb8-82fd-4eaeb6135382" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="050a238d-f979-48bb-9954-a77c03b9e998">
+            <collectionField Id="e6b45b36-6f72-454a-bb57-0e9c0322a556" name="Empleadoes" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="353b63c6-6c98-4d0a-bf6c-d1054d6f37b8">
+      <xpObject Id="588c737d-0ac2-4924-86e6-573f2384fba0" name="Venta" baseClass="XPLiteObject" userFileName="Venta" designerFileName="Venta.Designer" className="Venta" virtualBaseClass="XPLiteObject" persistent="Venta" virtualName="Venta">
+        <fields>
+          <generalXpObjectHasFields Id="9c1f2f11-f5a6-4640-9f56-cafa512bd166">
+            <field Id="acb14fcc-9d0d-48d3-9630-44ff8289f187" name="IdVenta" columnType="Int32" key="true" isIdentity="true" persistent="IdVenta" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1346867c-9c4e-462a-b575-6e5ea789918d">
+            <field Id="b9233a9e-8844-40b1-844c-9ad1ac987ec0" name="IdClient" columnType="Int32" persistent="IdClient" virtualColumnType="Cliente" logicalType="Cliente" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1494b590-e52a-46d5-8a55-44e998a54061">
+            <field Id="9a4c9c43-002d-4ff3-ad0a-e599f302d94c" name="IdEmpleado" columnType="Int32" persistent="IdEmpleado" virtualColumnType="Empleado" logicalType="Empleado" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="30c0c4e0-e832-4db7-a276-8b2bcf7b027d">
+            <field Id="2f03783e-159d-45d1-a3bb-61d63b69f1a1" name="TipoDocumento" persistent="TipoDocumento" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="20" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="a1762f4d-5393-494e-89ec-83abe8fe87cb">
+            <field Id="4877f6ce-ab84-41a5-88cc-4f755f1b77f5" name="DocumentoVenta" persistent="DocumentoVenta" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="12" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="19a4bee6-d140-48d3-9bda-8960e4d8736e">
+            <field Id="5209d894-da18-454f-a85c-105a30375f7f" name="MontoPago" columnType="Decimal" persistent="MontoPago" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="476acbed-06fd-422f-a8a0-95ee4f59e3cd">
+            <field Id="236a0ce3-787b-4d6f-aa98-5129b0acec2f" name="MontoCambio" columnType="Decimal" persistent="MontoCambio" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="d7add67a-8319-4632-8fb4-581d611761e4">
+            <field Id="7ed8c784-c245-4483-85c4-e016c5321161" name="TipoPago" persistent="TipoPago" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="8" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="cf850c95-fe48-435a-9af9-f2b4bdfa6703">
+            <field Id="9f7fdbf1-af83-4fa2-a580-946e69137cf7" name="IdCambio" columnType="Int32" persistent="IdCambio" virtualColumnType="CambioDolar" logicalType="CambioDolar" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5fd3924f-6ad0-43e2-af71-a2cc8dbefdb9">
+            <field Id="40dcd476-4562-49a5-a10b-cd97deb6cb46" name="Descuento" columnType="Int32" persistent="Descuento" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" defaultValue="Int32#0" dbDefaultValue="((0))" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2b8a5f20-3966-4d10-89eb-536dd6725b6f">
+            <field Id="1d3dcbdc-3351-4453-9804-65c8796945de" name="MontoTotal" columnType="Decimal" persistent="MontoTotal" virtualColumnType="Decimal" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="9d42951a-2db2-4736-9017-2f85d44dd36b">
+            <field Id="3c4fc2d8-be1e-4b22-9a54-1841f0d1549c" name="FechaRegistro" columnType="DateTime" persistent="FechaRegistro" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" defaultValue="DateTime#09/21/2022 13:37:55" dbDefaultValue="(getdate())" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="570a1927-f0bf-4c50-86f6-945299feb7ac" sourceCollectionName="DetalleVentas" name="DetalleVentaReferencesVenta" targetFieldName="IdVenta">
+            <xpObjectMoniker Id="ffac3521-20ce-461b-99ff-94cc3306fcc7" />
+          </simpleAssociation>
+          <simpleAssociation Id="ced99618-0b8b-4331-9e1b-d7a9e02a71bb" sourceCollectionName="EstadoVentas" name="EstadoVentaReferencesVenta" targetFieldName="IdVenta">
+            <xpObjectMoniker Id="14c9b47d-d5e4-4fc3-811e-bb0798aca0d8" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="5490c887-8a6b-4551-b3ca-ed2fad209883">
+            <collectionField Id="b82fbb5e-e731-4f87-80c6-1845a91e8b04" name="DetalleVentas" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="0876fdfa-685e-4c64-aeb3-a7a684e5f28b">
+            <collectionField Id="9866273d-d344-4854-9f44-46ac674d3cea" name="EstadoVentas" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>
