@@ -124,7 +124,6 @@
       <DependentUpon>FormAnimation.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\CodeRepeatClass.cs" />
-    <Compile Include="Class\EntidadClass.cs" />
     <Compile Include="EstadoSistema\FormEstadoProducto.cs">
       <SubType>Form</SubType>
     </Compile>

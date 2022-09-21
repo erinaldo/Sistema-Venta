@@ -31,11 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEstadoProducto));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnModificar = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.gridEstadoProducto = new DevExpress.XtraGrid.GridControl();
+            this.xpEstadoProducto = new DevExpress.Xpo.XPCollection(this.components);
             this.gridViewEstadoProducto = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEstado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.searchEstadoProducto = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.xpProducto = new DevExpress.Xpo.XPCollection(this.components);
             this.searchViewEstadoProducto = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -50,25 +59,18 @@
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.SesionVenta = new DevExpress.Xpo.UnitOfWork(this.components);
-            this.xpEstadoProducto = new DevExpress.Xpo.XPCollection(this.components);
-            this.xpProducto = new DevExpress.Xpo.XPCollection(this.components);
-            this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnModificar = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEstado = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SesionVenta = new DevExpress.Xpo.UnitOfWork(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstadoProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEstadoProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchEstadoProducto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchViewEstadoProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -82,13 +84,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -109,6 +109,32 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnModificar.Appearance.Options.UseFont = true;
+            this.btnModificar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.ImageOptions.Image")));
+            this.btnModificar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnModificar.Location = new System.Drawing.Point(451, 103);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(368, 40);
+            this.btnModificar.StyleController = this.layoutControl1;
+            this.btnModificar.TabIndex = 11;
+            this.btnModificar.Text = "Modificar";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.btnGuardar.Appearance.Options.UseFont = true;
+            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
+            this.btnGuardar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btnGuardar.Location = new System.Drawing.Point(34, 103);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(403, 40);
+            this.btnGuardar.StyleController = this.layoutControl1;
+            this.btnGuardar.TabIndex = 10;
+            this.btnGuardar.Text = "Guardar";
+            // 
             // gridEstadoProducto
             // 
             this.gridEstadoProducto.DataSource = this.xpEstadoProducto;
@@ -119,6 +145,10 @@
             this.gridEstadoProducto.TabIndex = 9;
             this.gridEstadoProducto.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewEstadoProducto});
+            // 
+            // xpEstadoProducto
+            // 
+            this.xpEstadoProducto.Session = this.SesionVenta;
             // 
             // gridViewEstadoProducto
             // 
@@ -132,11 +162,46 @@
             this.gridViewEstadoProducto.Name = "gridViewEstadoProducto";
             this.gridViewEstadoProducto.OptionsBehavior.Editable = false;
             // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.Visible = true;
+            this.colId.VisibleIndex = 0;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.FieldName = "IdProducto!";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.FieldName = "IdProducto!Key";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            // 
+            // colEstado
+            // 
+            this.colEstado.FieldName = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.Visible = true;
+            this.colEstado.VisibleIndex = 3;
+            // 
+            // colFecha
+            // 
+            this.colFecha.FieldName = "Fecha";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.Visible = true;
+            this.colFecha.VisibleIndex = 4;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.Appearance.Options.UseFont = true;
-            this.btnCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnCancelar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.ImageOptions.Image")));
             this.btnCancelar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
             this.btnCancelar.Location = new System.Drawing.Point(833, 103);
             this.btnCancelar.Name = "btnCancelar";
@@ -167,6 +232,10 @@
             this.searchEstadoProducto.Size = new System.Drawing.Size(647, 20);
             this.searchEstadoProducto.StyleController = this.layoutControl1;
             this.searchEstadoProducto.TabIndex = 5;
+            // 
+            // xpProducto
+            // 
+            this.xpProducto.Session = this.SesionVenta;
             // 
             // searchViewEstadoProducto
             // 
@@ -310,34 +379,6 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // SesionVenta
-            // 
-            this.SesionVenta.IsObjectModifiedOnNonPersistentPropertyChange = null;
-            this.SesionVenta.TrackPropertiesModifications = false;
-            // 
-            // xpEstadoProducto
-            // 
-            this.xpEstadoProducto.ObjectType = typeof(Sistemaventa.Sistema_Venta.EstadoProducto);
-            this.xpEstadoProducto.Session = this.SesionVenta;
-            // 
-            // xpProducto
-            // 
-            this.xpProducto.ObjectType = typeof(Sistemaventa.Sistema_Venta.Producto);
-            this.xpProducto.Session = this.SesionVenta;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnGuardar.Appearance.Options.UseFont = true;
-            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
-            this.btnGuardar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnGuardar.Location = new System.Drawing.Point(34, 103);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(403, 40);
-            this.btnGuardar.StyleController = this.layoutControl1;
-            this.btnGuardar.TabIndex = 10;
-            this.btnGuardar.Text = "Guardar";
-            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnGuardar;
@@ -356,19 +397,6 @@
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(10, 44);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.Appearance.Options.UseFont = true;
-            this.btnModificar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnModificar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btnModificar.Location = new System.Drawing.Point(451, 103);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(368, 40);
-            this.btnModificar.StyleController = this.layoutControl1;
-            this.btnModificar.TabIndex = 11;
-            this.btnModificar.Text = "Modificar";
             // 
             // layoutControlItem4
             // 
@@ -389,40 +417,10 @@
             this.emptySpaceItem5.Size = new System.Drawing.Size(10, 44);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // colId
+            // SesionVenta
             // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.FieldName = "IdProducto!";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.FieldName = "IdProducto!Key";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
-            // 
-            // colEstado
-            // 
-            this.colEstado.FieldName = "Estado";
-            this.colEstado.Name = "colEstado";
-            this.colEstado.Visible = true;
-            this.colEstado.VisibleIndex = 3;
-            // 
-            // colFecha
-            // 
-            this.colFecha.FieldName = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.Visible = true;
-            this.colFecha.VisibleIndex = 4;
+            this.SesionVenta.IsObjectModifiedOnNonPersistentPropertyChange = null;
+            this.SesionVenta.TrackPropertiesModifications = false;
             // 
             // FormEstadoProducto
             // 
@@ -436,8 +434,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEstadoProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEstadoProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchEstadoProducto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchViewEstadoProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -451,13 +451,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).EndInit();
             this.ResumeLayout(false);
 
         }

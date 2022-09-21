@@ -21,8 +21,6 @@ namespace Sistemaventa.Forms
         int Subtotal, PrecioVenta, ValorCantidad, Cantidad, TotalStockProducto, IdDetalleCompra = 0, ResultadoStock = 0, CantidadStock;
 
         CodeRepeatClass repeatClass = new CodeRepeatClass();
-        List<EntidadClass> entidads = new List<EntidadClass>();
-        EntidadClass entidad;
 
         DetalleVenta objtDetalleVenta;
         DetalleCompra objtDetalleCompra;
