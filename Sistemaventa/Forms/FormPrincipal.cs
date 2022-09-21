@@ -23,6 +23,8 @@ namespace Sistemaventa.Forms
         public static Empleado objtEmpleado;
         public static Tema objtTema;
         public static CambioDolar objtDolar;
+        Producto objtProducto;
+
         CodeRepeatClass repeatClass = new CodeRepeatClass();
 
         string ValorDolar = "", NombreTema = "";
@@ -371,6 +373,23 @@ namespace Sistemaventa.Forms
                     ValorDolar = item.ValorDolar.ToString();
 
                     txtCambio.Text = ValorDolar;
+                }
+            }
+
+            foreach (Producto item in xpProducto)
+            {
+                string FechaVence = "", InformacionEsatdo = "Vencido";
+                FechaVence = DateTime.Now.ToShortDateString();
+                if(item.FechaVence == FechaVence)
+                {
+                    EstadoProducto objtEstadoProducto = new EstadoProducto(SesionVenta);
+                    objtEstadoProducto.IdProducto = item;
+                    objtEstadoProducto.Estado = InformacionEsatdo;
+                    objtEstadoProducto.Fecha = Convert.ToDateTime(DateTime.Now.ToString());
+
+                    objtEstadoProducto.Save();
+                    SesionVenta.CommitChanges();
+                    xpEstadoProducto.Reload();
                 }
             }
 

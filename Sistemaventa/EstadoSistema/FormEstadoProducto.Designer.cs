@@ -35,10 +35,14 @@
             this.btnGuardar = new DevExpress.XtraEditors.SimpleButton();
             this.gridEstadoProducto = new DevExpress.XtraGrid.GridControl();
             this.xpEstadoProducto = new DevExpress.Xpo.XPCollection(this.components);
+            this.SesionVenta = new DevExpress.Xpo.UnitOfWork(this.components);
             this.gridViewEstadoProducto = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEstado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
@@ -63,11 +67,11 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.SesionVenta = new DevExpress.Xpo.UnitOfWork(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEstadoProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEstadoProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchEstadoProducto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).BeginInit();
@@ -88,7 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -119,7 +122,7 @@
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(368, 40);
             this.btnModificar.StyleController = this.layoutControl1;
-            this.btnModificar.TabIndex = 11;
+            this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             // 
             // btnGuardar
@@ -132,7 +135,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(403, 40);
             this.btnGuardar.StyleController = this.layoutControl1;
-            this.btnGuardar.TabIndex = 10;
+            this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             // 
             // gridEstadoProducto
@@ -148,7 +151,13 @@
             // 
             // xpEstadoProducto
             // 
+            this.xpEstadoProducto.ObjectType = typeof(Sistemaventa.Sistema_Venta.EstadoProducto);
             this.xpEstadoProducto.Session = this.SesionVenta;
+            // 
+            // SesionVenta
+            // 
+            this.SesionVenta.IsObjectModifiedOnNonPersistentPropertyChange = null;
+            this.SesionVenta.TrackPropertiesModifications = false;
             // 
             // gridViewEstadoProducto
             // 
@@ -156,6 +165,9 @@
             this.colId,
             this.gridColumn1,
             this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
             this.colEstado,
             this.colFecha});
             this.gridViewEstadoProducto.GridControl = this.gridEstadoProducto;
@@ -166,36 +178,93 @@
             // 
             this.colId.FieldName = "Id";
             this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
             // 
             // gridColumn1
             // 
             this.gridColumn1.FieldName = "IdProducto!";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
             // 
             // gridColumn2
             // 
-            this.gridColumn2.FieldName = "IdProducto!Key";
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.Caption = "Producto";
+            this.gridColumn2.FieldName = "IdProducto.Nombre";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.Caption = "Descripción";
+            this.gridColumn3.FieldName = "IdProducto.Descripcion";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.Caption = "Estado";
+            this.gridColumn4.FieldName = "IdProducto.Estado";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 2;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.Caption = "Fecha Vence";
+            this.gridColumn5.FieldName = "IdProducto.FechaVence";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 3;
             // 
             // colEstado
             // 
+            this.colEstado.AppearanceCell.Options.UseTextOptions = true;
+            this.colEstado.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colEstado.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colEstado.AppearanceHeader.Options.UseFont = true;
+            this.colEstado.AppearanceHeader.Options.UseTextOptions = true;
+            this.colEstado.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colEstado.FieldName = "Estado";
             this.colEstado.Name = "colEstado";
             this.colEstado.Visible = true;
-            this.colEstado.VisibleIndex = 3;
+            this.colEstado.VisibleIndex = 4;
             // 
             // colFecha
             // 
+            this.colFecha.AppearanceCell.Options.UseTextOptions = true;
+            this.colFecha.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colFecha.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.colFecha.AppearanceHeader.Options.UseFont = true;
+            this.colFecha.AppearanceHeader.Options.UseTextOptions = true;
+            this.colFecha.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colFecha.FieldName = "Fecha";
             this.colFecha.Name = "colFecha";
             this.colFecha.Visible = true;
-            this.colFecha.VisibleIndex = 4;
+            this.colFecha.VisibleIndex = 5;
             // 
             // btnCancelar
             // 
@@ -207,17 +276,21 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(344, 40);
             this.btnCancelar.StyleController = this.layoutControl1;
-            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             // 
             // comboBoxEstado
             // 
             this.comboBoxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEstado.FormattingEnabled = true;
+            this.comboBoxEstado.Items.AddRange(new object[] {
+            "Devolución",
+            "Dañado",
+            "Vencido"});
             this.comboBoxEstado.Location = new System.Drawing.Point(799, 68);
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(399, 21);
-            this.comboBoxEstado.TabIndex = 6;
+            this.comboBoxEstado.TabIndex = 1;
             // 
             // searchEstadoProducto
             // 
@@ -231,10 +304,11 @@
             this.searchEstadoProducto.Properties.ValueMember = "IdProd";
             this.searchEstadoProducto.Size = new System.Drawing.Size(647, 20);
             this.searchEstadoProducto.StyleController = this.layoutControl1;
-            this.searchEstadoProducto.TabIndex = 5;
+            this.searchEstadoProducto.TabIndex = 0;
             // 
             // xpProducto
             // 
+            this.xpProducto.ObjectType = typeof(Sistemaventa.Sistema_Venta.Producto);
             this.xpProducto.Session = this.SesionVenta;
             // 
             // searchViewEstadoProducto
@@ -417,11 +491,6 @@
             this.emptySpaceItem5.Size = new System.Drawing.Size(10, 44);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // SesionVenta
-            // 
-            this.SesionVenta.IsObjectModifiedOnNonPersistentPropertyChange = null;
-            this.SesionVenta.TrackPropertiesModifications = false;
-            // 
             // FormEstadoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,6 +504,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEstadoProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEstadoProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchEstadoProducto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).EndInit();
@@ -455,7 +525,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,6 +563,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn colEstado;
         private DevExpress.XtraGrid.Columns.GridColumn colFecha;
     }

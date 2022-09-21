@@ -86,6 +86,11 @@ namespace Sistemaventa.Forms
             searchViewCategoria.ActiveFilterString = "[Estado] = 'Activo'";
             xpCategoria.Reload();
         }
+        private void FnFilterProductosVencidos()
+        {
+            searchViewCategoria.ActiveFilterString = "[FechaVence] = 'No-Vence'";
+            xpCategoria.Reload();
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             if (IsEditar == true)
@@ -124,6 +129,11 @@ namespace Sistemaventa.Forms
             MensajeAyuda.SetToolTip(btnCancelar, "Cancela cualquier acción que se haya realizado");
             MensajeAyuda.SetToolTip(radioButtonVence, "Nos indica si el producto tiene Vencimiento");
             MensajeAyuda.SetToolTip(radioButtonNoVence, "Nos indica si el producto tiene o no Vencimiento");
+
+            if (objtEmpleado.IdRol.NombreRol != "Administración")
+            {
+                FnFilterProductosVencidos();
+            }
 
             FnEnableButton(true);
             FnEnableDatosGuardar(false);

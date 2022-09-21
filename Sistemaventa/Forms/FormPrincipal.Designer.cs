@@ -118,6 +118,8 @@
             this.timerHora = new System.Windows.Forms.Timer(this.components);
             this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.xpProducto = new DevExpress.Xpo.XPCollection(this.components);
+            this.xpEstadoProducto = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
@@ -128,6 +130,8 @@
             this.panelCambioDolar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -936,6 +940,16 @@
             this.applicationMenu1.Name = "applicationMenu1";
             this.applicationMenu1.Ribbon = this.ribbonControl1;
             // 
+            // xpProducto
+            // 
+            this.xpProducto.ObjectType = typeof(Sistemaventa.Sistema_Venta.Producto);
+            this.xpProducto.Session = this.SesionVenta;
+            // 
+            // xpEstadoProducto
+            // 
+            this.xpEstadoProducto.ObjectType = typeof(Sistemaventa.Sistema_Venta.EstadoProducto);
+            this.xpEstadoProducto.Session = this.SesionVenta;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -967,6 +981,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1061,5 +1077,7 @@
         private DevExpress.Utils.WorkspaceManager workspaceManager1;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
         private DevExpress.XtraEditors.SimpleButton btnLimpiar;
+        private DevExpress.Xpo.XPCollection xpProducto;
+        private DevExpress.Xpo.XPCollection xpEstadoProducto;
     }
 }
