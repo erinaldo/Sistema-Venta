@@ -88,7 +88,9 @@ namespace Sistemaventa.Forms
         }
         private void FnFilterProductosVencidos()
         {
-            searchViewCategoria.ActiveFilterString = "[FechaVence] = 'No-Vence'";
+            string FechaVence = "";
+            FechaVence = DateTime.Now.ToLongDateString();
+            searchViewCategoria.ActiveFilterString = "[FechaVence] = 'No-Vence' || [FechaVence] != 'FechaVence'";
             xpCategoria.Reload();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -333,6 +335,22 @@ namespace Sistemaventa.Forms
         {
             TextBox Text = (TextBox)sender;
             Text.SelectAll();
+        }
+
+        private void searchCategoria_Properties_Click(object sender, EventArgs e)
+        {
+            foreach (Categoria categoria in xpCategoria)
+            {
+                categoria.Reload();
+            }
+        }
+
+        private void searchMarca_Properties_Click(object sender, EventArgs e)
+        {
+            foreach (Marca marca in xpMarca)
+            {
+                marca.Reload();
+            }
         }
 
         private void gridViewProducto_DoubleClick(object sender, EventArgs e)

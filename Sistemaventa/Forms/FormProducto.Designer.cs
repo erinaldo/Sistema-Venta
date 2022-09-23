@@ -481,6 +481,7 @@
             this.searchCategoria.Properties.DisplayMember = "NombreCateg";
             this.searchCategoria.Properties.PopupView = this.searchViewCategoria;
             this.searchCategoria.Properties.ValueMember = "IdCateg";
+            this.searchCategoria.Properties.Click += new System.EventHandler(this.searchCategoria_Properties_Click);
             this.searchCategoria.Size = new System.Drawing.Size(193, 20);
             this.searchCategoria.StyleController = this.layoutControl1;
             this.searchCategoria.TabIndex = 3;
@@ -573,6 +574,7 @@
             this.searchMarca.Properties.DisplayMember = "Nombre";
             this.searchMarca.Properties.PopupView = this.searchViewMarca;
             this.searchMarca.Properties.ValueMember = "IdMarca";
+            this.searchMarca.Properties.Click += new System.EventHandler(this.searchMarca_Properties_Click);
             this.searchMarca.Size = new System.Drawing.Size(193, 20);
             this.searchMarca.StyleController = this.layoutControl1;
             this.searchMarca.TabIndex = 4;

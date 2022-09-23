@@ -62,6 +62,8 @@
             this.btnNuevo = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.searchRol = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.contextMenuStripClickRigth = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xpRol = new DevExpress.Xpo.XPCollection(this.components);
             this.searchViewRol = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIdRol = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -118,6 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchRol.Properties)).BeginInit();
+            this.contextMenuStripClickRigth.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpRol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchViewRol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -206,6 +209,7 @@
             // SesionVenta
             // 
             this.SesionVenta.IsObjectModifiedOnNonPersistentPropertyChange = null;
+            this.SesionVenta.OptimisticLockingReadBehavior = DevExpress.Xpo.OptimisticLockingReadBehavior.ReloadObject;
             this.SesionVenta.TrackPropertiesModifications = false;
             // 
             // gridViewEmpleado
@@ -508,6 +512,7 @@
             this.searchRol.Name = "searchRol";
             this.searchRol.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchRol.Properties.ContextMenuStrip = this.contextMenuStripClickRigth;
             this.searchRol.Properties.DataSource = this.xpRol;
             this.searchRol.Properties.DisplayMember = "NombreRol";
             this.searchRol.Properties.PopupView = this.searchViewRol;
@@ -516,6 +521,20 @@
             this.searchRol.StyleController = this.layoutControl1;
             this.searchRol.TabIndex = 9;
             this.searchRol.EditValueChanged += new System.EventHandler(this.searchRol_EditValueChanged);
+            // 
+            // contextMenuStripClickRigth
+            // 
+            this.contextMenuStripClickRigth.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.actualizarToolStripMenuItem});
+            this.contextMenuStripClickRigth.Name = "contextMenuStripClickRigth";
+            this.contextMenuStripClickRigth.Size = new System.Drawing.Size(127, 26);
+            // 
+            // actualizarToolStripMenuItem
+            // 
+            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.actualizarToolStripMenuItem.Text = "Actualizar";
+            this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
             // xpRol
             // 
@@ -1055,6 +1074,7 @@
             this.Name = "FormEmpleado";
             this.Text = "Empleado";
             this.Load += new System.EventHandler(this.FormEmpleado_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormEmpleado_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEmpleado)).EndInit();
@@ -1063,6 +1083,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEmpleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchRol.Properties)).EndInit();
+            this.contextMenuStripClickRigth.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xpRol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchViewRol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -1176,5 +1197,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFoto;
         private DevExpress.XtraGrid.Columns.GridColumn colFechaRegistro;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripClickRigth;
+        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
     }
 }

@@ -16,7 +16,7 @@ namespace Sistemaventa.Forms
     public partial class FormEmpleado : Form
     {
         DateTime FechaRegistro;
-        int ValorRol, ValorTema, KeypressRol;
+        int ValorRol, ValorTema;
         bool IsEditar = false;
 
         CodeRepeatClass repeatClass = new CodeRepeatClass();
@@ -102,7 +102,20 @@ namespace Sistemaventa.Forms
             FnEnableCancelar(true);
             txtCedula.Focus();
         }
-
+        private void FnLoadRoles()
+        {
+            foreach (Rol rol in xpRol)
+            {
+                rol.Reload();
+            }
+        }
+        private void FnLoadEmpleado()
+        {
+            foreach (Empleado person in xpEmpleado)
+            {
+                person.Reload();
+            }
+        }
         private void FormEmpleado_Load(object sender, EventArgs e)
         {
             pictureBoxFoto.AllowDrop = true;
@@ -341,6 +354,21 @@ namespace Sistemaventa.Forms
                     txtCorreo.Focus();
                     return;
                 }
+            }
+        }
+
+        private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FnLoadRoles();
+            FnLoadEmpleado();
+        }
+
+        private void FormEmpleado_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F5)
+            {
+                FnLoadEmpleado();
+                FnLoadRoles();
             }
         }
 

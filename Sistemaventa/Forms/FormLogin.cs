@@ -88,7 +88,7 @@ namespace Sistemaventa
         }
         private void FnAgregarCambioDolar()
         {
-            SelectedData spStoredProc = SesionVenta.ExecuteSproc("spExecInsertarCambioDoalr", "spInsertarCambioDolar");
+            SelectedData spStoredProc = SesionVenta.ExecuteSproc("spExecInsertarCambioDolar", "spInsertarCambioDolar");
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -101,8 +101,13 @@ namespace Sistemaventa
             if (xpTema.Count == 0)
             {
                 FnAgregarTodosTema();
+            }
+
+            if(xpCambioDolar.Count == 0)
+            {
                 FnAgregarCambioDolar();
             }
+
             var MensajeAyuda = new ToolTip();
             MensajeAyuda.SetToolTip(txtUsuario, "Escribe tu acceso");
             MensajeAyuda.SetToolTip(txtContraseña, "Escribe tu contraseña");

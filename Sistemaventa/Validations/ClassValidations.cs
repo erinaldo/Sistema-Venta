@@ -9,6 +9,17 @@ namespace Sistemaventa.Validations
 {
     public class ClassValidations
     {
+        public static void FnLoadf5(KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString().Equals("F5"))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
         public static void LettersValidation(KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar))

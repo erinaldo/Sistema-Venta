@@ -47,9 +47,9 @@
             this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
-            this.searchEstadoProducto = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchProducto = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.xpProducto = new DevExpress.Xpo.XPCollection(this.components);
-            this.searchViewEstadoProducto = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.searchViewProducto = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -73,9 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEstadoProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchEstadoProducto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchProducto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewEstadoProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -101,7 +101,7 @@
             this.layoutControl1.Controls.Add(this.gridEstadoProducto);
             this.layoutControl1.Controls.Add(this.btnCancelar);
             this.layoutControl1.Controls.Add(this.comboBoxEstado);
-            this.layoutControl1.Controls.Add(this.searchEstadoProducto);
+            this.layoutControl1.Controls.Add(this.searchProducto);
             this.layoutControl1.Controls.Add(this.label1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -124,6 +124,7 @@
             this.btnModificar.StyleController = this.layoutControl1;
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnGuardar
             // 
@@ -137,6 +138,7 @@
             this.btnGuardar.StyleController = this.layoutControl1;
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // gridEstadoProducto
             // 
@@ -173,6 +175,7 @@
             this.gridViewEstadoProducto.GridControl = this.gridEstadoProducto;
             this.gridViewEstadoProducto.Name = "gridViewEstadoProducto";
             this.gridViewEstadoProducto.OptionsBehavior.Editable = false;
+            this.gridViewEstadoProducto.DoubleClick += new System.EventHandler(this.gridViewEstadoProducto_DoubleClick);
             // 
             // colId
             // 
@@ -278,6 +281,7 @@
             this.btnCancelar.StyleController = this.layoutControl1;
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // comboBoxEstado
             // 
@@ -292,31 +296,31 @@
             this.comboBoxEstado.Size = new System.Drawing.Size(399, 21);
             this.comboBoxEstado.TabIndex = 1;
             // 
-            // searchEstadoProducto
+            // searchProducto
             // 
-            this.searchEstadoProducto.Location = new System.Drawing.Point(75, 68);
-            this.searchEstadoProducto.Name = "searchEstadoProducto";
-            this.searchEstadoProducto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.searchProducto.Location = new System.Drawing.Point(75, 68);
+            this.searchProducto.Name = "searchProducto";
+            this.searchProducto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchEstadoProducto.Properties.DataSource = this.xpProducto;
-            this.searchEstadoProducto.Properties.DisplayMember = "Nombre";
-            this.searchEstadoProducto.Properties.PopupView = this.searchViewEstadoProducto;
-            this.searchEstadoProducto.Properties.ValueMember = "IdProd";
-            this.searchEstadoProducto.Size = new System.Drawing.Size(647, 20);
-            this.searchEstadoProducto.StyleController = this.layoutControl1;
-            this.searchEstadoProducto.TabIndex = 0;
+            this.searchProducto.Properties.DataSource = this.xpProducto;
+            this.searchProducto.Properties.DisplayMember = "Nombre";
+            this.searchProducto.Properties.PopupView = this.searchViewProducto;
+            this.searchProducto.Properties.ValueMember = "IdProd";
+            this.searchProducto.Size = new System.Drawing.Size(647, 20);
+            this.searchProducto.StyleController = this.layoutControl1;
+            this.searchProducto.TabIndex = 0;
             // 
             // xpProducto
             // 
             this.xpProducto.ObjectType = typeof(Sistemaventa.Sistema_Venta.Producto);
             this.xpProducto.Session = this.SesionVenta;
             // 
-            // searchViewEstadoProducto
+            // searchViewProducto
             // 
-            this.searchViewEstadoProducto.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchViewEstadoProducto.Name = "searchViewEstadoProducto";
-            this.searchViewEstadoProducto.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchViewEstadoProducto.OptionsView.ShowGroupPanel = false;
+            this.searchViewProducto.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchViewProducto.Name = "searchViewProducto";
+            this.searchViewProducto.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchViewProducto.OptionsView.ShowGroupPanel = false;
             // 
             // label1
             // 
@@ -374,7 +378,7 @@
             // 
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem2.Control = this.searchEstadoProducto;
+            this.layoutControlItem2.Control = this.searchProducto;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 56);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(714, 25);
@@ -506,9 +510,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SesionVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEstadoProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchEstadoProducto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchProducto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchViewEstadoProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchViewProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -539,8 +543,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewEstadoProducto;
         private DevExpress.XtraEditors.SimpleButton btnCancelar;
         private System.Windows.Forms.ComboBox comboBoxEstado;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchEstadoProducto;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchViewEstadoProducto;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchProducto;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchViewProducto;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;

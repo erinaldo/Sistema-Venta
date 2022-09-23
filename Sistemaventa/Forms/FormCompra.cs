@@ -115,7 +115,8 @@ namespace Sistemaventa.Forms
         }
         private void FnFilterProducto()
         {
-            searchViewProducto.ActiveFilterString = "[Estado] = 'Activo'";
+            string fechaVence = DateTime.Now.ToLongDateString();
+            searchViewProducto.ActiveFilterString = "[Estado] = 'Activo' || 'No-Vence' && [FechaVence] != 'fechaVence'";
         }
         private void txtCantidad_ValueChanged(object sender, EventArgs e)
         {
