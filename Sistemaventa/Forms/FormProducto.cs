@@ -93,6 +93,20 @@ namespace Sistemaventa.Forms
             searchViewCategoria.ActiveFilterString = "[FechaVence] = 'No-Vence' || [FechaVence] != 'FechaVence'";
             xpCategoria.Reload();
         }
+        private void FnReloadMarca()
+        {
+            foreach (Marca marca in xpMarca)
+            {
+                marca.Reload();
+            }
+        }
+        private void FnReloadCategoria()
+        {
+            foreach (Categoria categoria in xpCategoria)
+            {
+                categoria.Reload();
+            }
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             if (IsEditar == true)
@@ -247,7 +261,7 @@ namespace Sistemaventa.Forms
                 radioButtonNoVence.Focus();
                 return;
             }
-            if (MessageBox.Show("¿Seguro dese editar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro dese modificar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 objtProducto = (Producto)gridViewProducto.GetFocusedRow();
 
@@ -289,7 +303,7 @@ namespace Sistemaventa.Forms
 
                 objtProducto.Save();
                 SesionVenta.CommitChanges();
-                MessageBox.Show("Su registro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Su registro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 xpProducto.Reload();
                 FnClearDatosGuardar();
                 FnEnableButton(true);
@@ -339,18 +353,12 @@ namespace Sistemaventa.Forms
 
         private void searchCategoria_Properties_Click(object sender, EventArgs e)
         {
-            foreach (Categoria categoria in xpCategoria)
-            {
-                categoria.Reload();
-            }
+            FnReloadCategoria();
         }
 
         private void searchMarca_Properties_Click(object sender, EventArgs e)
         {
-            foreach (Marca marca in xpMarca)
-            {
-                marca.Reload();
-            }
+            FnReloadMarca();
         }
 
         private void gridViewProducto_DoubleClick(object sender, EventArgs e)

@@ -362,6 +362,14 @@ namespace Sistemaventa.Forms
             formularioHijo.Show();
         }
 
+        private void btnEstadoVenta_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormEstadoVenta formularioHijo = FormEstadoVenta.Instance();
+            formularioHijo.MdiParent = this;
+            formularioHijo.WindowState = FormWindowState.Maximized;
+            formularioHijo.Show();
+        }
+
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             FnpanelCambioDolarVisible(false);
@@ -410,6 +418,18 @@ namespace Sistemaventa.Forms
                         "Solicita al administrador Activar su cuenta", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+                if(item.IdRol.NombreRol == "Administración")
+                {
+                    btnEliminarVenta.Enabled = true;
+                    btnEliminarCompra.Enabled = true;
+                }
+                else
+                {
+                    btnEliminarVenta.Enabled = false;
+                    btnEliminarCompra.Enabled = false;
+                }
+
 
                 if (objtEmpleado.IdRol.MenuRol == true)
                 {

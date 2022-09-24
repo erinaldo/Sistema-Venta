@@ -238,7 +238,7 @@ namespace Sistemaventa.Forms
             bool verificar = texto.Contains("@") && texto.Contains(".com");
             if (verificar == true)
             {
-                if (MessageBox.Show("¿Seguro desea editar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("¿Seguro desea modificar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     objtProveedor = (Proveedor)gridViewProveedor.GetFocusedRow();
                     objtProveedor.NombreProv = txtNombre.Text.Trim();
@@ -254,7 +254,7 @@ namespace Sistemaventa.Forms
 
                     objtProveedor.Save();
                     SesionVenta.CommitChanges();
-                    MessageBox.Show("Su registro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Su registro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     xpProveedor.Reload();
                     FnClearDatosGuardar();
                     FnEnableButton(true);

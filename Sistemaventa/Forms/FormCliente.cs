@@ -192,7 +192,7 @@ namespace Sistemaventa.Forms
                 return;
             }
 
-            if (MessageBox.Show("¿Seguro desea editar su registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro desea modificar su registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 objtCliente = (Cliente)gridViewCliente.GetFocusedRow();
 
@@ -208,7 +208,7 @@ namespace Sistemaventa.Forms
 
                 objtCliente.Save();
                 SesionVenta.CommitChanges();
-                MessageBox.Show("Su registro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Su registro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 xpCliente.Reload();
                 FnClearDatosGuardar();
                 FnEnableButton(true);

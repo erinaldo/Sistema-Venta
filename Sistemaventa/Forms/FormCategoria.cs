@@ -120,7 +120,7 @@ namespace Sistemaventa.Forms
                 return;
             }
 
-            if (MessageBox.Show("¿Seguro desea editar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro desea modificar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 objtCategoria = (Categoria)gridViewCategoria.GetFocusedRow();
 
@@ -132,7 +132,7 @@ namespace Sistemaventa.Forms
 
                 objtCategoria.Save();
                 SesionVenta.CommitChanges();
-                MessageBox.Show("Su registro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Su registro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 xpCategoria.Reload();
                 FnClearDatos();
                 IsEditar = false;

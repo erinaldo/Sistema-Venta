@@ -142,10 +142,10 @@ namespace Sistemaventa.Forms
             FnModificar();
             if (EditarPress == 1)
             {
-                if (MessageBox.Show("¿Seguro desea editar el registro?", repeatClass.Mensaje,MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("¿Seguro desea modificar el registro?", repeatClass.Mensaje,MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     FnModificar();
-                    MessageBox.Show("Su regsitro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Su regsitro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 

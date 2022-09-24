@@ -355,7 +355,7 @@ namespace Sistemaventa.Forms
             }
             else
             {
-                if (MessageBox.Show("¿Seguro desea guardar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("¿Seguro desea modificar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     objtRol = (Rol)gridViewRol.GetFocusedRow();
                     objtRol.NombreRol = txtNombre.Text.Trim();
@@ -436,7 +436,7 @@ namespace Sistemaventa.Forms
 
                     objtRol.Save();
                     SesionVenta.CommitChanges();
-                    MessageBox.Show("Su resgistro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Su resgistro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     xpRol.Reload();
                     FnEnableButton(true);
                     FnEnabledatos(false);

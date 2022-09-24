@@ -99,7 +99,7 @@ namespace Sistemaventa.EstadoSistema
                 return;
             }
 
-            if (MessageBox.Show("¿Seguro desea editar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro desea modificar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 objtEstadoProducto = (EstadoProducto)gridViewEstadoProducto.GetFocusedRow();
                 objtEstadoProducto.IdProducto = (Producto)searchViewProducto.GetFocusedRow();
@@ -108,7 +108,7 @@ namespace Sistemaventa.EstadoSistema
 
                 objtEstadoProducto.Save();
                 SesionVenta.CommitChanges();
-                MessageBox.Show("Su registro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Su registro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 xpEstadoProducto.Reload();
             }
         }

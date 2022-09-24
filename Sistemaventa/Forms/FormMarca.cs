@@ -152,7 +152,7 @@ namespace Sistemaventa.Forms
                 return;
             }
 
-            if (MessageBox.Show("¿Seguro desea editar su registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Seguro desea modificar su registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 objtMarca = (Marca)gridViewMarca.GetFocusedRow();
                 objtMarca.Nombre = txtNombre.Text;
@@ -163,7 +163,7 @@ namespace Sistemaventa.Forms
 
                 objtMarca.Save();
                 SesionVenta.CommitChanges();
-                MessageBox.Show("Su registro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Su registro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 xpMarca.Reload();
                 FnClearDatos();
                 IsEditar = false;

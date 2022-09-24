@@ -241,11 +241,11 @@ namespace Sistemaventa.Forms
                     else
                     {
                         FnModifcarDatos();
-                        if (MessageBox.Show("¿Desea editar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (MessageBox.Show("¿Desea modificar el registro?", repeatClass.Mensaje, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             FnModifcarDatos();
 
-                            MessageBox.Show("Su registro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Su registro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             MessageBox.Show("El sistema se reiniciara para guardar los cambios en la base de datos", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Application.Restart();
                         }

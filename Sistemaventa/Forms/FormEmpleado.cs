@@ -248,7 +248,7 @@ namespace Sistemaventa.Forms
 
                 objtEmpleado.Save();
                 SesionVenta.CommitChanges();
-                MessageBox.Show("Su registro se edito correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Su registro se modifico correctamente", repeatClass.Mensaje, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 xpEmpleado.Reload();
                 FnEnableButton(true);
                 FnEnableModificar(false);
@@ -362,14 +362,29 @@ namespace Sistemaventa.Forms
             FnLoadRoles();
             FnLoadEmpleado();
         }
+        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, System.Windows.Forms.Keys keyData)
+        {
+            if ((keyData != Keys.F5))
+                return base.ProcessCmdKey(ref msg, keyData);
 
+            FnLoadEmpleado();
+            FnLoadRoles();
+
+            return true;
+        }
         private void FormEmpleado_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.F5)
+            // Validamos si se preciona f5, se actualice la información de roles y empleado
+            if(e.KeyData == Keys.F5)
             {
                 FnLoadEmpleado();
                 FnLoadRoles();
             }
+        }
+
+        private void searchRol_Properties_Click(object sender, EventArgs e)
+        {
+            FnLoadRoles();
         }
 
         private void gridViewEmpleado_DoubleClick(object sender, EventArgs e)

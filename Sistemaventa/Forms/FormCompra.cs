@@ -36,7 +36,7 @@ namespace Sistemaventa.Forms
             ChilInstance.BringToFront();
             return ChilInstance;
         }
-       
+
         public FormCompra()
         {
             InitializeComponent();

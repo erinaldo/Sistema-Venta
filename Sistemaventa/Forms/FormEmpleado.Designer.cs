@@ -517,6 +517,7 @@
             this.searchRol.Properties.DisplayMember = "NombreRol";
             this.searchRol.Properties.PopupView = this.searchViewRol;
             this.searchRol.Properties.ValueMember = "IdRol";
+            this.searchRol.Properties.Click += new System.EventHandler(this.searchRol_Properties_Click);
             this.searchRol.Size = new System.Drawing.Size(243, 20);
             this.searchRol.StyleController = this.layoutControl1;
             this.searchRol.TabIndex = 9;

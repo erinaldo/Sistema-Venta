@@ -130,6 +130,12 @@
     <Compile Include="EstadoSistema\FormEstadoProducto.Designer.cs">
       <DependentUpon>FormEstadoProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstadoSistema\FormEstadoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstadoSistema\FormEstadoVenta.Designer.cs">
+      <DependentUpon>FormEstadoVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EstadoSistema\FormEstadoProducto.resx">
       <DependentUpon>FormEstadoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadoSistema\FormEstadoVenta.resx">
+      <DependentUpon>FormEstadoVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCategoria.resx">
       <DependentUpon>FormCategoria.cs</DependentUpon>

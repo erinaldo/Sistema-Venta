@@ -56,6 +56,8 @@
             this.btnReporteVenta = new DevExpress.XtraBars.BarButtonItem();
             this.btnEstadoProducto = new DevExpress.XtraBars.BarButtonItem();
             this.btnEstadoVenta = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEliminarCompra = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEliminarVenta = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonRol = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -161,9 +163,11 @@
             this.btnReporteCompra,
             this.btnReporteVenta,
             this.btnEstadoProducto,
-            this.btnEstadoVenta});
+            this.btnEstadoVenta,
+            this.btnEliminarCompra,
+            this.btnEliminarVenta});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 24;
+            this.ribbonControl1.MaxItemId = 26;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonRol,
@@ -404,6 +408,25 @@
             this.btnEstadoVenta.Name = "btnEstadoVenta";
             this.btnEstadoVenta.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnEstadoVenta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEstadoVenta_ItemClick);
+            // 
+            // btnEliminarCompra
+            // 
+            this.btnEliminarCompra.Caption = "Deshacer Compra";
+            this.btnEliminarCompra.Id = 24;
+            this.btnEliminarCompra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarCompra.ImageOptions.Image")));
+            this.btnEliminarCompra.Name = "btnEliminarCompra";
+            this.btnEliminarCompra.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // btnEliminarVenta
+            // 
+            this.btnEliminarVenta.Caption = "Deshacer Venta";
+            this.btnEliminarVenta.Id = 25;
+            this.btnEliminarVenta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarVenta.ImageOptions.Image")));
+            this.btnEliminarVenta.Name = "btnEliminarVenta";
+            this.btnEliminarVenta.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // ribbonRol
             // 
@@ -507,6 +530,7 @@
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnCompra);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnEliminarCompra);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Gestión de la Compra";
             // 
@@ -537,6 +561,7 @@
             // ribbonPageGroup13
             // 
             this.ribbonPageGroup13.ItemLinks.Add(this.btnVenta);
+            this.ribbonPageGroup13.ItemLinks.Add(this.btnEliminarVenta);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "Gestión de Venta";
             // 
@@ -1079,5 +1104,7 @@
         private DevExpress.XtraEditors.SimpleButton btnLimpiar;
         private DevExpress.Xpo.XPCollection xpProducto;
         private DevExpress.Xpo.XPCollection xpEstadoProducto;
+        private DevExpress.XtraBars.BarButtonItem btnEliminarCompra;
+        private DevExpress.XtraBars.BarButtonItem btnEliminarVenta;
     }
 }
