@@ -332,11 +332,6 @@ namespace Sistemaventa.Forms
             ClassValidations.NumberValidation(e);
         }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            ClassValidations.LettersValidation(e);
-        }
-
         private void searchCategoria_Popup(object sender, EventArgs e)
         {
             if (objtEmpleado.IdRol.NombreRol != "Administración")

@@ -141,7 +141,6 @@ namespace Sistemaventa.Forms
                     objtCliente.ApellidoClient = txtApellido.Text;
                     objtCliente.SexoClient = comboBoxSexo.Text;
                     objtCliente.CorreoClient = txtCorreo.Text;
-                    objtCliente.DocumentoCLient = txtDocumento.Text;
                     objtCliente.CelularClient = txtCelular.Text;
                     objtCliente.Estado = comboBoxEstado.Text;
 
@@ -200,7 +199,6 @@ namespace Sistemaventa.Forms
                 objtCliente.ApellidoClient = txtApellido.Text;
                 objtCliente.SexoClient = comboBoxSexo.Text;
                 objtCliente.CorreoClient = txtCorreo.Text;
-                objtCliente.DocumentoCLient = txtDocumento.Text;
                 objtCliente.CelularClient = txtCelular.Text;
                 objtCliente.Estado = comboBoxEstado.Text;
 

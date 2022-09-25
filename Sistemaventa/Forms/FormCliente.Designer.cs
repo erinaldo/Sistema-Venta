@@ -383,6 +383,7 @@
             // 
             // txtDocumento
             // 
+            this.txtDocumento.Enabled = false;
             this.txtDocumento.Location = new System.Drawing.Point(85, 165);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(202, 20);

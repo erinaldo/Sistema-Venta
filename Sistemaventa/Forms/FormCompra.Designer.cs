@@ -432,6 +432,7 @@
             // 
             // txtDocumento
             // 
+            this.txtDocumento.Enabled = false;
             this.txtDocumento.Location = new System.Drawing.Point(127, 137);
             this.txtDocumento.Name = "txtDocumento";
             this.txtDocumento.Size = new System.Drawing.Size(200, 20);
@@ -884,7 +885,7 @@
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 125);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(319, 24);
-            this.layoutControlItem5.Text = "N. Documento:";
+            this.layoutControlItem5.Text = "Número Factura:";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(112, 13);
             // 
             // layoutControlItem6
@@ -912,7 +913,9 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.layoutControlItem9.AppearanceItemCaption.ForeColor = System.Drawing.Color.LimeGreen;
             this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem9.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem9.Control = this.txtSubTotal;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 243);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -1035,7 +1038,9 @@
             // layoutControlItem15
             // 
             this.layoutControlItem15.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.layoutControlItem15.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red;
             this.layoutControlItem15.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem15.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem15.Control = this.txtMontoTotal;
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 277);
             this.layoutControlItem15.Name = "layoutControlItem15";

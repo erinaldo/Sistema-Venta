@@ -136,6 +136,18 @@
     <Compile Include="EstadoSistema\FormEstadoVenta.Designer.cs">
       <DependentUpon>FormEstadoVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCancelación\FormCancelarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCancelación\FormCancelarCompra.Designer.cs">
+      <DependentUpon>FormCancelarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCancelación\FormCancelarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCancelación\FormCancelarVenta.Designer.cs">
+      <DependentUpon>FormCancelarVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,7 +289,17 @@
     <Compile Include="ORMDataModel1Code\Rol.Designer.cs">
       <DependentUpon>Rol.cs</DependentUpon>
     </Compile>
+    <Compile Include="ORMDataModel1Code\sp_helpdiagramdefinitionResult.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\sp_helpdiagramsResult.cs">
+      <DependentUpon>StoredProcHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="ORMDataModel1Code\StoredProcHelper.cs" />
+    <Compile Include="ORMDataModel1Code\Sysdiagrams.cs" />
+    <Compile Include="ORMDataModel1Code\Sysdiagrams.Designer.cs">
+      <DependentUpon>Sysdiagrams.cs</DependentUpon>
+    </Compile>
     <Compile Include="ORMDataModel1Code\Tema.cs" />
     <Compile Include="ORMDataModel1Code\Tema.Designer.cs">
       <DependentUpon>Tema.cs</DependentUpon>
@@ -324,6 +346,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EstadoSistema\FormEstadoVenta.resx">
       <DependentUpon>FormEstadoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCancelación\FormCancelarCompra.resx">
+      <DependentUpon>FormCancelarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCancelación\FormCancelarVenta.resx">
+      <DependentUpon>FormCancelarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCategoria.resx">
       <DependentUpon>FormCategoria.cs</DependentUpon>

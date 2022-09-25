@@ -15,6 +15,7 @@ using DevExpress.XtraBars.Helpers;
 using DevExpress.XtraBars;
 using Sistemaventa.ViewList;
 using Sistemaventa.EstadoSistema;
+using Sistemaventa.FormCancelación;
 
 namespace Sistemaventa.Forms
 {
@@ -370,6 +371,22 @@ namespace Sistemaventa.Forms
             formularioHijo.Show();
         }
 
+        private void btnEliminarCompra_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormCancelarCompra formularioHijo = FormCancelarCompra.Instance();
+            formularioHijo.MdiParent = this;
+            formularioHijo.WindowState = FormWindowState.Maximized;
+            formularioHijo.Show();
+        }
+
+        private void btnEliminarVenta_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormCancelarVenta formularioHijo = FormCancelarVenta.Instance();
+            formularioHijo.MdiParent = this;
+            formularioHijo.WindowState = FormWindowState.Maximized;
+            formularioHijo.Show();
+        }
+
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             FnpanelCambioDolarVisible(false);
@@ -419,17 +436,24 @@ namespace Sistemaventa.Forms
                     return;
                 }
 
-                if(item.IdRol.NombreRol == "Administración")
+                if (objtEmpleado.IdRol.NombreRol == "Administración")
                 {
                     btnEliminarVenta.Enabled = true;
                     btnEliminarCompra.Enabled = true;
+                    btnListaCompra.Enabled = true;
+                    btnDetallesCompra.Enabled = true;
+                    btnListaVenta.Enabled = true;
+                    btnDetallesVenta.Enabled = true;
                 }
                 else
                 {
                     btnEliminarVenta.Enabled = false;
                     btnEliminarCompra.Enabled = false;
+                    btnListaCompra.Enabled = false;
+                    btnDetallesCompra.Enabled = false;
+                    btnListaVenta.Enabled = false;
+                    btnDetallesVenta.Enabled = false;
                 }
-
 
                 if (objtEmpleado.IdRol.MenuRol == true)
                 {
@@ -478,30 +502,22 @@ namespace Sistemaventa.Forms
                 {
                     btnProveedor.Enabled = true;
                     btnCompra.Enabled = true;
-                    btnListaCompra.Enabled = true;
-                    btnDetallesCompra.Enabled = true;
                 }
                 else
                 {
                     btnProveedor.Enabled = false;
                     btnCompra.Enabled = false;
-                    btnListaCompra.Enabled = false;
-                    btnDetallesCompra.Enabled = false;
                 }
 
                 if (objtEmpleado.IdRol.MenuVenta == true)
                 {
                     btnCliente.Enabled = true;
                     btnVenta.Enabled = true;
-                    btnListaVenta.Enabled = true;
-                    btnDetallesVenta.Enabled = true;
                 }
                 else
                 {
                     btnCliente.Enabled = false;
                     btnVenta.Enabled = false;
-                    btnListaVenta.Enabled = false;
-                    btnDetallesVenta.Enabled = false;
                 }
 
                 if (objtEmpleado.IdRol.MenuEstado == true)

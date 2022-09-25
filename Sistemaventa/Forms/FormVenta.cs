@@ -431,7 +431,6 @@ namespace Sistemaventa.Forms
 
                 objtVenta.IdClient = (Cliente)searchViewCliente.GetFocusedRow();
                 objtVenta.TipoDocumento = comboBoxDocumento.Text;
-                objtVenta.DocumentoVenta = txtDocumento.Text;
 
                 if (radioButtonCordoba.Checked)
                 {

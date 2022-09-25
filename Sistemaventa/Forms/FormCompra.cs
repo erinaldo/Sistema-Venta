@@ -61,7 +61,7 @@ namespace Sistemaventa.Forms
         private bool FnValidationCamposVacios()
         {
             return (searchProveedor.EditValue == null || searchProducto.EditValue == null || comboBoxTipoDocumento.Text.Trim().Length == 0
-                || txtDocumento.Text.Trim().Length == 0 || txtPrecioCompra.Text == "0" || txtCantidad.Value == 0);
+                || txtPrecioCompra.Text == "0" || txtCantidad.Value == 0);
         }
 
         private void FnCalcularSubtotal()
@@ -116,7 +116,7 @@ namespace Sistemaventa.Forms
         private void FnFilterProducto()
         {
             string fechaVence = DateTime.Now.ToLongDateString();
-            searchViewProducto.ActiveFilterString = "[Estado] = 'Activo' || 'No-Vence' && [FechaVence] != 'fechaVence'";
+            searchViewProducto.ActiveFilterString = "[Estado] = 'Activo' And [FechaVence] = 'No-Vence' And [FechaVence] <> 'fechaVence'";
         }
         private void txtCantidad_ValueChanged(object sender, EventArgs e)
         {
@@ -167,7 +167,6 @@ namespace Sistemaventa.Forms
                 objtCompra.IdProv = (Proveedor)searchViewProveedor.GetFocusedRow();
 
                 objtCompra.TipoDocumento = comboBoxTipoDocumento.Text;
-                objtCompra.Documento = txtDocumento.Text;
 
                 objtCompra.Cantidad = ValorCantidad;
                 objtCompra.MontoTotal = Convert.ToDecimal(txtMontoTotal.Text);

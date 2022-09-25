@@ -624,9 +624,10 @@
             // 
             // txtDocumento
             // 
-            this.txtDocumento.Location = new System.Drawing.Point(1062, 71);
+            this.txtDocumento.Enabled = false;
+            this.txtDocumento.Location = new System.Drawing.Point(1080, 71);
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(136, 20);
+            this.txtDocumento.Size = new System.Drawing.Size(118, 20);
             this.txtDocumento.TabIndex = 2;
             this.txtDocumento.Enter += new System.EventHandler(this.txtDocumento_Enter);
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
@@ -642,7 +643,7 @@
             "Otros"});
             this.comboBoxDocumento.Location = new System.Drawing.Point(659, 71);
             this.comboBoxDocumento.Name = "comboBoxDocumento";
-            this.comboBoxDocumento.Size = new System.Drawing.Size(275, 21);
+            this.comboBoxDocumento.Size = new System.Drawing.Size(293, 21);
             this.comboBoxDocumento.TabIndex = 1;
             // 
             // searchProducto
@@ -1004,7 +1005,7 @@
             this.layoutControlItem4.Control = this.comboBoxDocumento;
             this.layoutControlItem4.Location = new System.Drawing.Point(533, 59);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(393, 25);
+            this.layoutControlItem4.Size = new System.Drawing.Size(411, 25);
             this.layoutControlItem4.Text = "Tipo Documento:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(111, 13);
             // 
@@ -1013,9 +1014,9 @@
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem5.Control = this.txtDocumento;
-            this.layoutControlItem5.Location = new System.Drawing.Point(936, 59);
+            this.layoutControlItem5.Location = new System.Drawing.Point(954, 59);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(254, 25);
+            this.layoutControlItem5.Size = new System.Drawing.Size(236, 25);
             this.layoutControlItem5.Text = "Documento:";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(111, 13);
             // 
@@ -1080,7 +1081,7 @@
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(926, 59);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(944, 59);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
             this.emptySpaceItem5.Size = new System.Drawing.Size(10, 25);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);

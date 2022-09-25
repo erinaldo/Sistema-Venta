@@ -643,7 +643,6 @@
             this.txtNombre.Size = new System.Drawing.Size(193, 20);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.Enter += new System.EventHandler(this.txtCodigo_Enter);
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtCodigo
             // 

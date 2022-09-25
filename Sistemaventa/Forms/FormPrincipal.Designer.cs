@@ -122,6 +122,7 @@
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.xpProducto = new DevExpress.Xpo.XPCollection(this.components);
             this.xpEstadoProducto = new DevExpress.Xpo.XPCollection(this.components);
+            this.xpRol = new DevExpress.Xpo.XPCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
@@ -134,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpRol)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -414,10 +416,11 @@
             // 
             this.btnEliminarCompra.Caption = "Deshacer Compra";
             this.btnEliminarCompra.Id = 24;
-            this.btnEliminarCompra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarCompra.ImageOptions.Image")));
+            this.btnEliminarCompra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarCompra.ImageOptions.Image")));
             this.btnEliminarCompra.Name = "btnEliminarCompra";
             this.btnEliminarCompra.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnEliminarCompra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminarCompra_ItemClick);
             // 
             // btnEliminarVenta
             // 
@@ -427,6 +430,7 @@
             this.btnEliminarVenta.Name = "btnEliminarVenta";
             this.btnEliminarVenta.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnEliminarVenta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEliminarVenta_ItemClick);
             // 
             // ribbonRol
             // 
@@ -975,6 +979,11 @@
             this.xpEstadoProducto.ObjectType = typeof(Sistemaventa.Sistema_Venta.EstadoProducto);
             this.xpEstadoProducto.Session = this.SesionVenta;
             // 
+            // xpRol
+            // 
+            this.xpRol.ObjectType = typeof(Sistemaventa.Sistema_Venta.Rol);
+            this.xpRol.Session = this.SesionVenta;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1008,6 +1017,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xpEstadoProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xpRol)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1106,5 +1116,6 @@
         private DevExpress.Xpo.XPCollection xpEstadoProducto;
         private DevExpress.XtraBars.BarButtonItem btnEliminarCompra;
         private DevExpress.XtraBars.BarButtonItem btnEliminarVenta;
+        private DevExpress.Xpo.XPCollection xpRol;
     }
 }

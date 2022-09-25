@@ -30,6 +30,7 @@ namespace Sistemaventa.Sistema_Venta
             typeof(Producto),
             typeof(Proveedor),
             typeof(Rol),
+            typeof(Sysdiagrams),
             typeof(Tema),
             typeof(Venta)
         };
